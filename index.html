@@ -304,14 +304,8 @@
 
   <nav class="tabs">
     <button data-tab="rankings" class="active">Rankings</button>
-    <button data-tab="add" id="addTabBtn" style="display:none;">Add Player</button>
     <button data-tab="rules">Rules</button>
   </nav>
-  <div class="admin-toggle">
-    <span>Admin Mode</span>
-    <div class="switch" id="adminSwitch"><div class="knob"></div></div>
-    <span style="color:var(--ink-faint);">(this device only — no account)</span>
-  </div>
 </header>
 
 <main>
@@ -335,343 +329,9 @@
         <label>List</label>
         <select id="listSelect"></select>
       </div>
-      <div style="display:flex; gap:10px; margin-bottom:16px;">
-        <button type="button" class="btn ghost" id="exportBtn">⬇ Export Roster (.json)</button>
-        <button type="button" class="btn ghost" id="importBtn">⬆ Import Roster (.json)</button>
-        <input type="file" id="importFile" accept="application/json,.json" style="display:none;">
-      </div>
-      <div class="msg ok" id="ioMsg" style="margin-bottom:12px;"></div>
       <div id="rankList"></div>
     </div>
   </section>
-
-  <!-- ================= ADD COMPETITION RECORD ================= -->
-  <section class="panel" id="panel-add">
-    <div class="card">
-      <div class="card-head">
-        <h2>Add Player Competition Record</h2>
-        <span class="hint">Admin only</span>
-      </div>
-
-      <form id="playerForm">
-        <div class="grid2">
-          <div class="field">
-            <label>Player Name</label>
-            <input type="text" id="f-name" placeholder="e.g. Lamine Yamal" required>
-          </div>
-          <div class="field">
-            <label>Season</label>
-            <input type="text" id="f-season" value="2026/27" required>
-          </div>
-        </div>
-
-        <div class="grid2">
-          <div class="field">
-            <label>Position</label>
-            <select id="f-position">
-              <option value="ST">Striker (ST)</option>
-<option value="RWF">Right Wing Forward (RWF)</option>
-<option value="LWF">Left Wing Forward (LWF)</option>
-<option value="RWF">Right Wing Forward (RWF)</option>
-<option value="LWF">Left Wing Forward (LWF)</option>
-              <option value="CAM">Attacking Midfielder (CAM)</option>
-              <option value="CM">Central Midfielder (CM)</option>
-              <option value="CDM">Defensive Midfielder (CDM)</option>
-              <option value="CB">Centre-Back (CB)</option>
-              <option value="LB">Left-Back (LB)</option>
-              <option value="RB">Right-Back (RB)</option>
-              <option value="GK">Goalkeeper (GK)</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Competition</label>
-            <select id="f-competition"></select>
-          </div>
-        </div>
-
-        <div class="field" id="f-league-wrap" style="display:none;">
-          <label>Final League Position of Club</label>
-          <select id="f-league-position">
-            <option value="0">6th or lower / not ranked 1–5</option>
-            <option value="1">1st — +5 points</option>
-            <option value="2">2nd — +4 points</option>
-            <option value="3">3rd — +3 points</option>
-            <option value="4">4th — +2 points</option>
-            <option value="5">5th — +1 point</option>
-          </select>
-        </div>
-
-        <div class="field" id="f-stage-wrap" style="display:none;">
-          <label>Furthest Stage Reached</label>
-          <select id="f-stage">
-            <option value="none">Did not reach Round of 16</option>
-            <option value="r16">Round of 16 — +1</option>
-            <option value="qf">Quarter-final — +2</option>
-            <option value="sf">Semi-final — +3</option>
-            <option value="final">Final — +4</option>
-            <option value="champion">Winner — +5</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>Individual Stats for This Competition</label>
-          <div class="grid-stats" id="f-stats"></div>
-        </div>
-
-        <div class="field">
-          <label>Competition Awards</label>
-          <div class="grid2">
-            <div>
-              <label style="font-weight:400; color:var(--ink-dim);">Golden Boot wins (×3 each)</label>
-              <input type="number" id="f-goldenboot" min="0" step="1" value="0">
-            </div>
-            <div>
-              <label style="font-weight:400; color:var(--ink-dim);">Assist Leader wins (×3 each)</label>
-              <input type="number" id="f-assistleader" min="0" step="1" value="0">
-            </div>
-          </div>
-        </div>
-
-        <div class="field">
-          <div class="grid2">
-            <div>
-              <label>MVP awards in this competition (×2 each)</label>
-              <input type="number" id="f-mvp" min="0" step="1" value="0">
-            </div>
-            <div id="f-finalmvp-wrap" style="display:none;">
-              <label>Final MVP (+5)</label>
-              <select id="f-finalmvp">
-                <option value="0">No</option>
-                <option value="1">Yes — +5</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="field">
-          <div class="preview-score" id="scorePreview">Competition Score: 0</div>
-        </div>
-
-        <button type="submit" class="btn">Save Competition Record</button>
-        <div class="msg ok" id="saveMsg">Competition record saved.</div>
-      </form>
-    </div>
-  </section>
-
-  <!-- ================= RULES ================= -->
-
-    <div class="card rule-card">
-      <div class="card-head"><h2>New SPS Ballon d'Or System</h2></div>
-      <p style="font-size:13.5px; color:var(--ink-dim); line-height:1.8; margin:0;">
-        The old Ballon d'Or-specific trophy and award scoring system has been removed.
-        A player's Ballon d'Or total is simply the sum of the points earned in every
-        competition played during the season.
-      </p>
-      <div class="preview-score" style="margin-top:14px; display:block; text-align:center;">
-        Total = League + Cups + International + Every Other Competition
-      </div>
-    </div>
-
-    <div class="card rule-card">
-      <div class="card-head"><h2>League Competition</h2></div>
-      <div class="stage-row"><span>Club finishes 1st</span><b>+5</b></div>
-      <div class="stage-row"><span>Club finishes 2nd</span><b>+4</b></div>
-      <div class="stage-row"><span>Club finishes 3rd</span><b>+3</b></div>
-      <div class="stage-row"><span>Club finishes 4th</span><b>+2</b></div>
-      <div class="stage-row"><span>Club finishes 5th</span><b>+1</b></div>
-      <div class="hint" style="margin-top:10px;">Every player in the club receives the points for the club's final league position.</div>
-    </div>
-
-    <div class="card rule-card">
-      <div class="card-head"><h2>Cup / Knockout Competition</h2></div>
-      <div class="stage-row"><span>Round of 16</span><b>+1</b></div>
-      <div class="stage-row"><span>Quarter-final</span><b>+2</b></div>
-      <div class="stage-row"><span>Semi-final</span><b>+3</b></div>
-      <div class="stage-row"><span>Final</span><b>+4</b></div>
-      <div class="stage-row"><span>Winner</span><b>+5</b></div>
-      <div class="hint" style="margin-top:10px;">The score is based on the furthest stage reached. The winner receives +5 for winning the competition.</div>
-    </div>
-
-    <div class="card rule-card">
-      <div class="card-head"><h2>Individual Performance Rules</h2></div>
-      <div class="grid2">
-        <div>
-          <h3>Attackers (ST, CAM)</h3>
-          <table class="ref">
-            <tr><td>Goals</td><td>×3</td></tr>
-            <tr><td>Assists</td><td>×2</td></tr>
-            <tr><td>Successful Dribbles</td><td>×1</td></tr>
-            <tr><td>Chances Created</td><td>×1</td></tr>
-          </table>
-        </div>
-        <div>
-          <h3>Midfielders (CM, CDM)</h3>
-          <table class="ref">
-            <tr><td>Goals</td><td>×2</td></tr>
-            <tr><td>Assists</td><td>×3</td></tr>
-            <tr><td>Successful Dribbles</td><td>×1</td></tr>
-            <tr><td>Chances Created</td><td>×1</td></tr>
-          </table>
-        </div>
-        <div>
-          <h3>Defenders (CB, LB, RB)</h3>
-          <table class="ref">
-            <tr><td>Goals</td><td>×2</td></tr>
-            <tr><td>Assists</td><td>×3</td></tr>
-            <tr><td>Successful Tackles</td><td>×1</td></tr>
-            <tr><td>Chances Created</td><td>×1</td></tr>
-          </table>
-        </div>
-        <div>
-          <h3>Goalkeepers (GK)</h3>
-          <table class="ref">
-            <tr><td>Clean Sheets</td><td>×3</td></tr>
-            <tr><td>Saves</td><td>×1</td></tr>
-            <tr><td>Penalty Saves</td><td>×5</td></tr>
-            <tr><td>Goals</td><td>×2</td></tr>
-            <tr><td>Assists</td><td>×2</td></tr>
-          </table>
-        </div>
-      </div>
-      <div class="hint" style="margin-top:12px;">Successful dribbles remain an offensive/midfield stat; successful tackles remain the defender performance stat, following the normal SPS rules.</div>
-    </div>
-
-    <div class="card rule-card">
-      <div class="card-head"><h2>Special Awards</h2></div>
-      <div class="stage-row"><span>Golden Boot</span><b>×3</b></div>
-      <div class="stage-row"><span>Assist Leader</span><b>×3</b></div>
-      <div class="stage-row"><span>MVP</span><b>×2</b></div>
-      <div class="stage-row"><span>Cup Final MVP</span><b>+5</b></div>
-      <div class="hint" style="margin-top:10px;">All MVP awards received during the season are counted in their respective competitions.</div>
-    </div>
-
-    <div class="card rule-card">
-      <div class="card-head"><h2>Ballon d'Or Calculation</h2></div>
-      <p style="font-size:13.5px; color:var(--ink-dim); line-height:1.8; margin:0;">
-        Each competition is scored separately. After every competition has been scored,
-        all of that player's competition totals for the season are added together.
-        The player with the highest total wins the SPS Ballon d'Or.
-      </p>
-    </div>
-
-
-  <!-- ================= ADMIN EDIT MODAL ================= -->
-  <div class="modal-backdrop" id="editModal" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="editModalTitle">
-      <div class="modal-head">
-        <div>
-          <h2 id="editModalTitle">Edit Player Competition Record</h2>
-          <div class="hint" id="editModalSubtitle">Admin Mode</div>
-        </div>
-        <button type="button" class="modal-close" id="editCloseBtn" title="Close">✕</button>
-      </div>
-
-      <form id="editForm">
-        <input type="hidden" id="e-id">
-
-        <div class="grid2">
-          <div class="field">
-            <label>Player Name</label>
-            <input type="text" id="e-name" required>
-          </div>
-          <div class="field">
-            <label>Season</label>
-            <input type="text" id="e-season" required>
-          </div>
-        </div>
-
-        <div class="grid2">
-          <div class="field">
-            <label>Position</label>
-            <select id="e-position">
-              <option value="ST">Striker (ST)</option>
-              <option value="CAM">Attacking Midfielder (CAM)</option>
-              <option value="CM">Central Midfielder (CM)</option>
-              <option value="CDM">Defensive Midfielder (CDM)</option>
-              <option value="CB">Centre-Back (CB)</option>
-              <option value="LB">Left-Back (LB)</option>
-              <option value="RB">Right-Back (RB)</option>
-              <option value="GK">Goalkeeper (GK)</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Competition</label>
-            <select id="e-competition"></select>
-          </div>
-        </div>
-
-        <div class="field" id="e-league-wrap" style="display:none;">
-          <label>Final League Position of Club</label>
-          <select id="e-league-position">
-            <option value="0">6th or lower / not ranked 1–5</option>
-            <option value="1">1st — +5 points</option>
-            <option value="2">2nd — +4 points</option>
-            <option value="3">3rd — +3 points</option>
-            <option value="4">4th — +2 points</option>
-            <option value="5">5th — +1 point</option>
-          </select>
-        </div>
-
-        <div class="field" id="e-stage-wrap" style="display:none;">
-          <label>Furthest Stage Reached</label>
-          <select id="e-stage">
-            <option value="none">Did not reach Round of 16</option>
-            <option value="r16">Round of 16 — +1</option>
-            <option value="qf">Quarter-final — +2</option>
-            <option value="sf">Semi-final — +3</option>
-            <option value="final">Final — +4</option>
-            <option value="champion">Winner — +5</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label>Individual Stats for This Competition</label>
-          <div class="grid-stats" id="e-stats"></div>
-        </div>
-
-        <div class="field">
-          <label>Competition Awards</label>
-          <div class="grid2">
-            <div>
-              <label style="font-weight:400; color:var(--ink-dim);">Golden Boot wins (×3 each)</label>
-              <input type="number" id="e-goldenboot" min="0" step="1" value="0">
-            </div>
-            <div>
-              <label style="font-weight:400; color:var(--ink-dim);">Assist Leader wins (×3 each)</label>
-              <input type="number" id="e-assistleader" min="0" step="1" value="0">
-            </div>
-          </div>
-        </div>
-
-        <div class="field">
-          <div class="grid2">
-            <div>
-              <label>MVP awards in this competition (×2 each)</label>
-              <input type="number" id="e-mvp" min="0" step="1" value="0">
-            </div>
-            <div id="e-finalmvp-wrap" style="display:none;">
-              <label>Final MVP (+5)</label>
-              <select id="e-finalmvp">
-                <option value="0">No</option>
-                <option value="1">Yes — +5</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="field">
-          <div class="preview-score" id="editScorePreview">Competition Score: 0</div>
-        </div>
-
-        <div class="edit-actions">
-          <button type="submit" class="btn">Save Changes</button>
-          <button type="button" class="btn ghost" id="editCancelBtn">Cancel</button>
-        </div>
-        <div class="msg ok" id="editMsg">Changes saved.</div>
-      </form>
-    </div>
-  </div>
-
 </main>
 
 <footer><span>★</span><span class="rule2"></span>ONE SYSTEM<span class="rule2"></span>★<span class="rule2"></span>ALL POSITIONS<span class="rule2"></span>★<span class="rule2"></span>TOTAL FAIRNESS<span class="rule2"></span>★</footer>
@@ -737,7 +397,6 @@
   };
 
   let players = [];
-  let adminMode = false;
   let storageReady = false;
 
   const $ = sel => document.querySelector(sel);
@@ -822,79 +481,35 @@
     return rec;
   }
 
-  function waitForStorage(timeoutMs){
-    return new Promise(resolve=>{
-      const start = Date.now();
-      (function poll(){
-        if(window.storage && typeof window.storage.get === 'function'){
-          resolve(true); return;
-        }
-        if(Date.now()-start > timeoutMs){
-          resolve(false); return;
-        }
-        setTimeout(poll,75);
-      })();
-    });
-  }
-
-  function setStorageStatus(state){
-    const el = $('#storageStatus');
-    if(!el) return;
-
-    if(state==='ok'){
-      el.textContent = 'Ranked automatically by SPS points';
-      el.classList.remove('warn');
-    }else if(state==='unavailable'){
-      el.textContent = 'Auto-save is unavailable — use Export/Import to keep your roster';
-      el.classList.add('warn');
-    }else{
-      el.textContent = 'Could not save just now — try again';
-      el.classList.add('warn');
-    }
-  }
+  // ---------- Public roster data ----------
+  // The public website is VIEW-ONLY. Player data is read from players.json
+  // in the same GitHub Pages repository. Only the repository owner can edit
+  // that file, so public visitors cannot add or change players from the site.
 
   async function loadPlayers(){
-    storageReady = await waitForStorage(4000);
-
-    if(!storageReady){
-      setStorageStatus('unavailable');
-      players = [];
-      return;
-    }
-
     try{
-      const res = await window.storage.get('players', false);
-      const raw = res && res.value ? JSON.parse(res.value) : [];
-      players = Array.isArray(raw) ? raw.map(normalizeRecord).filter(Boolean) : [];
+      const response = await fetch('./players.json?cacheBust=' + Date.now(), {
+        cache: 'no-store'
+      });
+
+      if(!response.ok) throw new Error('players.json could not be loaded');
+
+      const raw = await response.json();
+      players = Array.isArray(raw)
+        ? raw.map(normalizeRecord).filter(Boolean)
+        : [];
+
       setStorageStatus('ok');
     }catch(e){
+      console.error('Roster load failed:',e);
       players = [];
-      setStorageStatus('ok');
+      setStorageStatus('error');
     }
   }
 
-  async function savePlayers(){
-    if(!storageReady){
-      storageReady = await waitForStorage(2000);
-      if(!storageReady){
-        setStorageStatus('unavailable');
-        return false;
-      }
-    }
-
-    try{
-      const result = await window.storage.set('players', JSON.stringify(players), false);
-      if(!result){
-        setStorageStatus('error');
-        return false;
-      }
-      setStorageStatus('ok');
-      return true;
-    }catch(e){
-      console.error('storage save failed',e);
-      setStorageStatus('error');
-      return false;
-    }
+  function savePlayers(){
+    // Public site intentionally cannot write player data.
+    return false;
   }
 
   // ---------- Tabs ----------
@@ -908,20 +523,8 @@
 
     if(tab==='rankings') renderRankings();
   }
-
   $$('nav.tabs button').forEach(b=>{
     b.addEventListener('click',()=>setTab(b.dataset.tab));
-  });
-
-  $('#adminSwitch').addEventListener('click',()=>{
-    adminMode=!adminMode;
-    $('#adminSwitch').classList.toggle('on',adminMode);
-    $('#addTabBtn').style.display=adminMode ? 'inline-block' : 'none';
-    if(!adminMode){
-      closeEditModal();
-      setTab('rankings');
-    }
-    renderRankings();
   });
 
   // ---------- Ranking list ----------
@@ -1235,12 +838,6 @@
             <div class="competition-meta">${escapeHtml(p.season)} · ${comp.type}</div>
           </div>
           <div class="rank-score">${score.total}</div>
-          ${adminMode
-            ? `<div class="rank-actions">
-                 <button class="rank-edit" data-edit="${p.id}" title="Edit player stats">Edit</button>
-                 <button class="rank-del" data-del="${p.id}" title="Remove">✕</button>
-               </div>`
-            : '<div></div>'}
         </div>
 
         <div class="breakdown">
@@ -1255,26 +852,6 @@
         </div>
       `;
     }).join('');
-
-    wrap.querySelectorAll('[data-edit]').forEach(btn=>{
-      btn.addEventListener('click',e=>{
-        e.stopPropagation();
-        openEditModal(btn.dataset.edit);
-      });
-    });
-
-    wrap.querySelectorAll('[data-del]').forEach(btn=>{
-      btn.addEventListener('click',async e=>{
-        e.stopPropagation();
-        const id=btn.dataset.del;
-
-        if(!confirm('Remove this competition record?')) return;
-
-        players=players.filter(p=>p.id!==id);
-        await savePlayers();
-        renderRankings();
-      });
-    });
   }
 
   function escapeHtml(s){
@@ -1286,299 +863,6 @@
   $('#listSelect').addEventListener('change',()=>renderRankings());
 
 
-  // ---------- Admin edit player record ----------
-  function buildEditCompetitionOptions(){
-    const select=$('#e-competition');
-    select.innerHTML='';
-
-    const groups=[
-      {label:'League Competitions',items:LEAGUES},
-      {label:'Cup Competitions',items:CLUB_CUPS},
-      {label:'International Competitions',items:INTERNATIONAL}
-    ];
-
-    groups.forEach(g=>{
-      const og=document.createElement('optgroup');
-      og.label=g.label;
-
-      g.items.forEach(name=>{
-        const opt=document.createElement('option');
-        opt.value=name;
-        opt.textContent=name;
-        og.appendChild(opt);
-      });
-
-      select.appendChild(og);
-    });
-  }
-
-  function readEditPlayer(){
-    const position=$('#e-position').value;
-    const group=POSITION_GROUP[position];
-    const mult=MULTIPLIERS[group];
-    const stats={};
-
-    Object.keys(mult).forEach(key=>{
-      const inp=$(`#e-stats input[data-stat="${key}"]`);
-      stats[key]=inp ? (Number(inp.value)||0) : 0;
-    });
-
-    return {
-      name:$('#e-name').value.trim(),
-      season:$('#e-season').value.trim() || '2026/27',
-      position,
-      competition:$('#e-competition').value,
-      leaguePosition:Number($('#e-league-position').value)||0,
-      stage:$('#e-stage').value,
-      goldenBoot:Number($('#e-goldenboot').value)||0,
-      assistLeader:Number($('#e-assistleader').value)||0,
-      mvp:Number($('#e-mvp').value)||0,
-      finalMvp:Number($('#e-finalmvp').value)||0,
-      stats
-    };
-  }
-
-  function renderEditStatFields(existingStats){
-    const group=POSITION_GROUP[$('#e-position').value];
-    const mult=MULTIPLIERS[group];
-    const wrap=$('#e-stats');
-
-    wrap.innerHTML='';
-
-    Object.keys(mult).forEach(key=>{
-      const div=document.createElement('div');
-      div.className='field';
-      div.innerHTML=
-        `<label>${STAT_LABELS[key]} (×${mult[key]})</label>
-         <input type="number" min="0" step="1" value="${Number(existingStats?.[key])||0}" data-stat="${key}">`;
-      wrap.appendChild(div);
-    });
-
-    wrap.querySelectorAll('input[data-stat]').forEach(inp=>{
-      inp.addEventListener('input',updateEditPreview);
-    });
-
-    updateEditPreview();
-  }
-
-  function updateEditFields(){
-    const comp=getCompetition($('#e-competition').value);
-    const isLeague=comp.type==='league';
-
-    $('#e-league-wrap').style.display=isLeague ? 'block' : 'none';
-    $('#e-stage-wrap').style.display=isLeague ? 'none' : 'block';
-    $('#e-finalmvp-wrap').style.display=isLeague ? 'none' : 'block';
-
-    updateEditPreview();
-  }
-
-  function updateEditPreview(){
-    const record=readEditPlayer();
-    const score=calcRecord(record);
-    const comp=getCompetition(record.competition);
-
-    const parts=[
-      `Performance ${score.statScore}`,
-      `${comp.type==='league' ? 'League position' : 'Stage'} +${score.competitionBonus}`,
-      `Awards +${score.awards}`
-    ];
-
-    $('#editScorePreview').innerHTML=
-      `Competition Score: <b>${score.total}</b>
-       <span style="font-family:'Manrope',sans-serif;font-size:12px;color:var(--ink-faint);letter-spacing:0;">
-       (${parts.join(' · ')})</span>`;
-  }
-
-  function closeEditModal(){
-    $('#editModal').classList.remove('show');
-    $('#editModal').setAttribute('aria-hidden','true');
-    $('#editMsg').classList.remove('show');
-  }
-
-  function openEditModal(id){
-    if(!adminMode) return;
-
-    const p=players.find(x=>x.id===id);
-    if(!p) return;
-
-    $('#e-id').value=p.id;
-    $('#e-name').value=p.name;
-    $('#e-season').value=p.season;
-    $('#e-position').value=p.position;
-    $('#e-competition').value=p.competition;
-    $('#e-league-position').value=String(Number(p.leaguePosition)||0);
-    $('#e-stage').value=p.stage || 'none';
-    $('#e-goldenboot').value=Number(p.goldenBoot)||0;
-    $('#e-assistleader').value=Number(p.assistLeader)||0;
-    $('#e-mvp').value=Number(p.mvp)||0;
-    $('#e-finalmvp').value=Number(p.finalMvp)||0;
-
-    renderEditStatFields(p.stats || {});
-    updateEditFields();
-
-    $('#editModalTitle').textContent=`Edit ${p.name}`;
-    $('#editModalSubtitle').textContent=`${p.season} · ${p.competition} · Admin Mode`;
-    $('#editModal').classList.add('show');
-    $('#editModal').setAttribute('aria-hidden','false');
-  }
-
-  buildEditCompetitionOptions();
-
-  $('#e-position').addEventListener('change',()=>renderEditStatFields({}));
-  $('#e-competition').addEventListener('change',updateEditFields);
-  $('#e-league-position').addEventListener('change',updateEditPreview);
-  $('#e-stage').addEventListener('change',updateEditPreview);
-  $('#e-goldenboot').addEventListener('input',updateEditPreview);
-  $('#e-assistleader').addEventListener('input',updateEditPreview);
-  $('#e-mvp').addEventListener('input',updateEditPreview);
-  $('#e-finalmvp').addEventListener('change',updateEditPreview);
-
-  $('#editCloseBtn').addEventListener('click',closeEditModal);
-  $('#editCancelBtn').addEventListener('click',closeEditModal);
-
-  $('#editModal').addEventListener('click',e=>{
-    if(e.target===e.currentTarget) closeEditModal();
-  });
-
-  document.addEventListener('keydown',e=>{
-    if(e.key==='Escape' && $('#editModal').classList.contains('show')){
-      closeEditModal();
-    }
-  });
-
-  $('#editForm').addEventListener('submit',async e=>{
-    e.preventDefault();
-
-    if(!adminMode){
-      closeEditModal();
-      return;
-    }
-
-    const id=$('#e-id').value;
-    const index=players.findIndex(p=>p.id===id);
-    if(index<0) return;
-
-    const record=readEditPlayer();
-    if(!record.name) return;
-
-    // Prevent duplicate player/season/competition records, except the record being edited.
-    const duplicate=players.some(p=>
-      p.id!==id &&
-      p.name.toLowerCase()===record.name.toLowerCase() &&
-      p.season===record.season &&
-      p.competition===record.competition
-    );
-
-    if(duplicate){
-      const msg=$('#editMsg');
-      msg.textContent='Another record already exists for this player, season and competition.';
-      msg.classList.remove('ok');
-      msg.classList.add('err','show');
-      setTimeout(()=>msg.classList.remove('show'),4000);
-      return;
-    }
-
-    players[index]=Object.assign({id},record);
-    const ok=await savePlayers();
-
-    const msg=$('#editMsg');
-    if(!ok){
-      msg.textContent='Changes are active for this session, but auto-save failed. Export the roster to keep them.';
-      msg.classList.remove('ok');
-      msg.classList.add('err','show');
-    }else{
-      msg.textContent=`${record.name} — ${record.competition} updated successfully.`;
-      msg.classList.remove('err');
-      msg.classList.add('ok','show');
-    }
-
-    renderRankings();
-    setTimeout(()=>{
-      msg.classList.remove('show');
-      closeEditModal();
-    },1200);
-  });
-
-  // ---------- Export / Import ----------
-  function showIoMsg(text,isErr){
-    const el=$('#ioMsg');
-    el.textContent=text;
-    el.classList.toggle('err',!!isErr);
-    el.classList.toggle('ok',!isErr);
-    el.classList.add('show');
-    setTimeout(()=>el.classList.remove('show'),5000);
-  }
-
-  $('#exportBtn').addEventListener('click',()=>{
-    if(players.length===0){
-      showIoMsg('No competition records to export yet.',true);
-      return;
-    }
-
-    const blob=new Blob([JSON.stringify(players,null,2)],{type:'application/json'});
-    const url=URL.createObjectURL(blob);
-    const a=document.createElement('a');
-    a.href=url;
-    a.download='sps-season-records.json';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-
-    showIoMsg(
-      `Exported ${players.length} competition record(s). Keep this file so the season can be restored.`
-    );
-  });
-
-  $('#importBtn').addEventListener('click',()=>$('#importFile').click());
-
-  $('#importFile').addEventListener('change',e=>{
-    const file=e.target.files[0];
-    if(!file) return;
-
-    const reader=new FileReader();
-
-    reader.onload=async()=>{
-      try{
-        const incoming=JSON.parse(reader.result);
-        if(!Array.isArray(incoming)) throw new Error('not an array');
-
-        const existingKeys=new Set(
-          players.map(p=>`${p.name.toLowerCase()}||${p.season}||${p.competition}`)
-        );
-
-        let added=0;
-
-        incoming.forEach(raw=>{
-          const p=normalizeRecord(raw);
-          if(!p) return;
-
-          const key=`${p.name.toLowerCase()}||${p.season}||${p.competition}`;
-
-          if(ALL_COMPETITIONS.includes(p.competition) && !existingKeys.has(key)){
-            players.push(p);
-            existingKeys.add(key);
-            added++;
-          }
-        });
-
-        await savePlayers();
-        renderRankings();
-        showIoMsg(`Imported ${added} new competition record(s) from ${file.name}.`);
-      }catch(err){
-        console.error(err);
-        showIoMsg(
-          'Could not read that file. Use an SPS roster exported from this app.',
-          true
-        );
-      }
-
-      $('#importFile').value='';
-    };
-
-    reader.readAsText(file);
-  });
-
   // ---------- Init ----------
   (async function init(){
     await loadPlayers();
@@ -1587,5 +871,8 @@
 
 })();
 </script>
+<div id="publicNote" style="text-align:center;padding:18px 12px 28px;color:var(--ink-faint);font-size:11px;">
+          SPS 26/27 · Public View · Player data is maintained by the SPS administrator
+        </div>
 </body>
 </html>
