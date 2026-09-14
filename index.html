@@ -317,7 +317,7 @@
         <div class="card-head" style="border:none; margin:0; padding:0;"><h2 style="font-size:18px;">Champions League</h2></div>
         <div class="hint" style="color:var(--ink-dim); font-size:12.5px;">2026/27 season</div>
       </div>
-      <div class="status-badge">Tournament Yet to Start</div>
+      <div class="status-badge">2026/27 · Active</div>
     </div>
 
     <div class="card">
@@ -481,7 +481,18 @@
     return rec;
   }
 
-  // ---------- Public roster data ----------
+  
+  const FALLBACK_PLAYERS = [{"id":"p_pl_01","name":"Bruno Fernandes","position":"CAM","season":"2026/27","competition":"Premier League","leaguePosition":0,"goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":3,"assists":1,"dribbles":2,"chancesCreated":11}},{"id":"p_pl_02","name":"Rayan Cherki","position":"CAM","season":"2026/27","competition":"Premier League","leaguePosition":2,"goldenBoot":0,"assistLeader":0,"mvp":1,"stats":{"goals":2,"assists":2,"dribbles":5,"chancesCreated":10}},{"id":"p_pl_03","name":"João Pedro","position":"ST","season":"2026/27","competition":"Premier League","leaguePosition":5,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":3,"assists":2,"dribbles":4,"chancesCreated":3}},{"id":"p_pl_04","name":"Morgan Rogers","position":"CAM","season":"2026/27","competition":"Premier League","leaguePosition":5,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":2,"dribbles":6,"chancesCreated":10}},{"id":"p_pl_05","name":"Anan Khalaili","position":"RB","season":"2026/27","competition":"Premier League","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":0,"assists":1,"tackles":17,"chancesCreated":4}},{"id":"p_pl_06","name":"Konstantinos Tzolakis","position":"GK","season":"2026/27","competition":"Premier League","leaguePosition":3,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"cleanSheets":3,"saves":14,"penaltySaves":0,"goals":0,"assists":0}},{"id":"p_pl_07","name":"Cole Palmer","position":"RWF","season":"2026/27","competition":"Premier League","leaguePosition":5,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":1,"dribbles":4,"chancesCreated":8}},{"id":"p_pl_08","name":"Erling Haaland","position":"ST","season":"2026/27","competition":"Premier League","leaguePosition":2,"goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":3,"assists":0,"dribbles":3,"chancesCreated":4}},{"id":"p_pl_09","name":"Cody Gakpo","position":"LWF","season":"2026/27","competition":"Premier League","leaguePosition":0,"goldenBoot":0,"assistLeader":1,"mvp":0,"stats":{"goals":1,"assists":3,"dribbles":3,"chancesCreated":5}},{"id":"p_pl_10","name":"Mathys Tel","position":"LWF","season":"2026/27","competition":"Premier League","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":1,"dribbles":10,"chancesCreated":4}},{"id":"p_pl_11","name":"Vitaly Janelt","position":"CDM","season":"2026/27","competition":"Premier League","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":1,"chancesCreated":5}},{"id":"p_pl_12","name":"Martin Ødegaard","position":"CAM","season":"2026/27","competition":"Premier League","leaguePosition":1,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":1,"dribbles":3,"chancesCreated":12}},{"id":"p_pl_13","name":"Alexander Isak","position":"ST","season":"2026/27","competition":"Premier League","leaguePosition":0,"goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":3,"assists":0,"dribbles":2,"chancesCreated":3}},{"id":"p_pl_14","name":"David Raya","position":"GK","season":"2026/27","competition":"Premier League","leaguePosition":1,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"cleanSheets":2,"saves":10,"penaltySaves":0,"goals":0,"assists":0}},{"id":"p_pl_15","name":"Rúben Dias","position":"CB","season":"2026/27","competition":"Premier League","leaguePosition":2,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":0,"assists":0,"tackles":8,"chancesCreated":3}},{"id":"p_pl_16","name":"Lukas Hornicek","position":"GK","season":"2026/27","competition":"Premier League","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"cleanSheets":1,"saves":13,"penaltySaves":0,"goals":0,"assists":0}},{"id":"p_pl_17","name":"Khell Scherpen","position":"GK","season":"2026/27","competition":"Premier League","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"cleanSheets":0,"saves":13,"penaltySaves":0,"goals":0,"assists":0}},{"id":"p_pl_18","name":"Bukayo Saka","position":"RWF","season":"2026/27","competition":"Premier League","leaguePosition":1,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":1,"dribbles":4,"chancesCreated":7}},{"id":"p_pl_19","name":"Kai Havertz","position":"ST","season":"2026/27","competition":"Premier League","leaguePosition":1,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":2,"chancesCreated":4}},{"id":"p_pl_20","name":"Bryan Mbeumo","position":"RWF","season":"2026/27","competition":"Premier League","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":3,"chancesCreated":3}},{"id":"p_laliga_01","name":"Raphinha","position":"LWF","season":"2026/27","competition":"La Liga","leaguePosition":1,"goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":6,"assists":2,"dribbles":8,"chancesCreated":12}},{"id":"p_laliga_02","name":"Lamine Yamal","position":"RWF","season":"2026/27","competition":"La Liga","leaguePosition":1,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":4,"assists":3,"dribbles":14,"chancesCreated":11}},{"id":"p_laliga_03","name":"Kylian Mbappé","position":"ST","season":"2026/27","competition":"La Liga","leaguePosition":2,"goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":6,"assists":1,"dribbles":9,"chancesCreated":5}},{"id":"p_laliga_04","name":"Fermín López","position":"CAM","season":"2026/27","competition":"La Liga","leaguePosition":1,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":4,"assists":2,"dribbles":5,"chancesCreated":8}},{"id":"p_laliga_05","name":"Sergio Camello","position":"ST","season":"2026/27","competition":"La Liga","leaguePosition":4,"goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":6,"assists":0,"dribbles":3,"chancesCreated":4}},{"id":"p_laliga_06","name":"Roberto Fernández","position":"ST","season":"2026/27","competition":"La Liga","leaguePosition":3,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":5,"assists":1,"dribbles":3,"chancesCreated":4}},{"id":"p_laliga_07","name":"Yassir Zabiri","position":"ST","season":"2026/27","competition":"La Liga","leaguePosition":5,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":5,"assists":0,"dribbles":4,"chancesCreated":2}},{"id":"p_laliga_08","name":"Pierre-Emerick Aubameyang","position":"ST","season":"2026/27","competition":"La Liga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":4,"assists":1,"dribbles":2,"chancesCreated":3}},{"id":"p_laliga_09","name":"Jude Bellingham","position":"CAM","season":"2026/27","competition":"La Liga","leaguePosition":2,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":2,"dribbles":6,"chancesCreated":9}},{"id":"p_laliga_10","name":"Vinícius Júnior","position":"LWF","season":"2026/27","competition":"La Liga","leaguePosition":2,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":3,"dribbles":12,"chancesCreated":8}},{"id":"p_laliga_11","name":"Álex Baena","position":"LWF","season":"2026/27","competition":"La Liga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":3,"assists":1,"dribbles":4,"chancesCreated":10}},{"id":"p_laliga_12","name":"Lucas Boyé","position":"ST","season":"2026/27","competition":"La Liga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":4,"assists":0,"dribbles":3,"chancesCreated":2}},{"id":"p_laliga_13","name":"Ante Budimir","position":"ST","season":"2026/27","competition":"La Liga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":4,"assists":0,"dribbles":1,"chancesCreated":2}},{"id":"p_laliga_14","name":"Arda Güler","position":"RWF","season":"2026/27","competition":"La Liga","leaguePosition":2,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":2,"dribbles":4,"chancesCreated":7}},{"id":"p_laliga_15","name":"Nicolas Pépé","position":"RWF","season":"2026/27","competition":"La Liga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":1,"dribbles":5,"chancesCreated":4}},{"id":"p_laliga_16","name":"Robert Navarro","position":"LWF","season":"2026/27","competition":"La Liga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":1,"dribbles":4,"chancesCreated":5}},{"id":"p_laliga_17","name":"Rodrigo Riquelme","position":"LWF","season":"2026/27","competition":"La Liga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":1,"dribbles":3,"chancesCreated":6}},{"id":"p_laliga_18","name":"M. Díaz","position":"ST","season":"2026/27","competition":"La Liga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":1,"dribbles":2,"chancesCreated":3}},{"id":"p_laliga_19","name":"Lee Kang-In","position":"RWF","season":"2026/27","competition":"La Liga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":2,"dribbles":5,"chancesCreated":6}},{"id":"p_laliga_20","name":"Luismi Cruz","position":"RWF","season":"2026/27","competition":"La Liga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":2,"dribbles":4,"chancesCreated":5}},{"id":"p_bl_01","name":"Yuito Suzuki","position":"ST","season":"2026/27","competition":"Bundesliga","leaguePosition":2,"goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":3,"assists":0,"dribbles":2,"chancesCreated":3}},{"id":"p_bl_02","name":"Younes Ebnoutalib","position":"ST","season":"2026/27","competition":"Bundesliga","leaguePosition":2,"goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":3,"assists":0,"dribbles":1,"chancesCreated":2}},{"id":"p_bl_03","name":"Ismael Saibari","position":"CAM","season":"2026/27","competition":"Bundesliga","leaguePosition":5,"goldenBoot":0,"assistLeader":1,"mvp":0,"stats":{"goals":0,"assists":3,"dribbles":4,"chancesCreated":8}},{"id":"p_bl_04","name":"Matthias Ginter","position":"CB","season":"2026/27","competition":"Bundesliga","leaguePosition":1,"goldenBoot":0,"assistLeader":1,"mvp":0,"stats":{"goals":0,"assists":3,"tackles":7,"chancesCreated":3}},{"id":"p_bl_05","name":"Joshua Kimmich","position":"CDM","season":"2026/27","competition":"Bundesliga","leaguePosition":5,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":0,"assists":2,"dribbles":3,"chancesCreated":11}},{"id":"p_bl_06","name":"Patrik Schick","position":"ST","season":"2026/27","competition":"Bundesliga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":2,"chancesCreated":4}},{"id":"p_bl_07","name":"Josha Vagnoman","position":"RB","season":"2026/27","competition":"Bundesliga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"tackles":11,"chancesCreated":4}},{"id":"p_bl_08","name":"Serhou Guirassy","position":"ST","season":"2026/27","competition":"Bundesliga","leaguePosition":3,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":1,"dribbles":3,"chancesCreated":3}},{"id":"p_bl_09","name":"Ridle Baku","position":"RB","season":"2026/27","competition":"Bundesliga","leaguePosition":4,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"tackles":9,"chancesCreated":3}},{"id":"p_bl_10","name":"Hugo Bolin","position":"CAM","season":"2026/27","competition":"Bundesliga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":5,"chancesCreated":2}},{"id":"p_bl_11","name":"Phillip Tietz","position":"ST","season":"2026/27","competition":"Bundesliga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":2,"chancesCreated":3}},{"id":"p_bl_12","name":"Thijs Dallinga","position":"ST","season":"2026/27","competition":"Bundesliga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":1,"chancesCreated":2}},{"id":"p_bl_13","name":"Maurice Krattenmacher","position":"CAM","season":"2026/27","competition":"Bundesliga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":4,"chancesCreated":4}},{"id":"p_bl_14","name":"Loris Karius","position":"GK","season":"2026/27","competition":"Bundesliga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"cleanSheets":1,"saves":22,"penaltySaves":0,"goals":0,"assists":0}},{"id":"p_bl_15","name":"Moritz Nicolas","position":"GK","season":"2026/27","competition":"Bundesliga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"cleanSheets":1,"saves":19,"penaltySaves":0,"goals":0,"assists":0}},{"id":"p_bl_16","name":"Finn Dahmen","position":"GK","season":"2026/27","competition":"Bundesliga","leaguePosition":3,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"cleanSheets":1,"saves":17,"penaltySaves":0,"goals":0,"assists":0}},{"id":"p_bl_17","name":"Miguel Gutiérrez","position":"LB","season":"2026/27","competition":"Bundesliga","leaguePosition":3,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":0,"assists":2,"tackles":8,"chancesCreated":8}},{"id":"p_bl_18","name":"Nikola Katić","position":"CB","season":"2026/27","competition":"Bundesliga","leaguePosition":3,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":0,"assists":0,"tackles":12,"chancesCreated":4}},{"id":"p_bl_19","name":"Adam Daghim","position":"RWF","season":"2026/27","competition":"Bundesliga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":1,"dribbles":5,"chancesCreated":2}},{"id":"p_bl_20","name":"Sheraldo Becker","position":"RWF","season":"2026/27","competition":"Bundesliga","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":2,"dribbles":3,"chancesCreated":1}},{"id":"p_sa_01","name":"Donyell Malen","position":"RWF","season":"2026/27","competition":"Serie A","leaguePosition":2,"goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":5,"assists":0,"dribbles":6,"chancesCreated":2}},{"id":"p_sa_02","name":"Paulo Dybala","position":"CAM","season":"2026/27","competition":"Serie A","leaguePosition":2,"goldenBoot":0,"assistLeader":1,"mvp":0,"stats":{"goals":0,"assists":4,"dribbles":5,"chancesCreated":7}},{"id":"p_sa_03","name":"Antonio Raimondo","position":"ST","season":"2026/27","competition":"Serie A","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":4,"assists":0,"dribbles":2,"chancesCreated":0}},{"id":"p_sa_04","name":"Davide Frattesi","position":"CM","season":"2026/27","competition":"Serie A","leaguePosition":1,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":3,"assists":0,"dribbles":2,"chancesCreated":2}},{"id":"p_sa_05","name":"Matías Soulé","position":"RWF","season":"2026/27","competition":"Serie A","leaguePosition":2,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":1,"dribbles":6,"chancesCreated":6}},{"id":"p_sa_06","name":"Martin Baturina","position":"CAM","season":"2026/27","competition":"Serie A","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":1,"dribbles":5,"chancesCreated":6}},{"id":"p_sa_07","name":"Assane Diao","position":"LWF","season":"2026/27","competition":"Serie A","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":1,"dribbles":4,"chancesCreated":4}},{"id":"p_sa_08","name":"Hassane Kamara","position":"LB","season":"2026/27","competition":"Serie A","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":1,"tackles":8,"chancesCreated":3}},{"id":"p_sa_09","name":"Lautaro Martínez","position":"ST","season":"2026/27","competition":"Serie A","leaguePosition":3,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":3,"chancesCreated":2}},{"id":"p_sa_10","name":"Hakan Çalhanoğlu","position":"CDM","season":"2026/27","competition":"Serie A","leaguePosition":3,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":1,"chancesCreated":6}},{"id":"p_sa_11","name":"Anastasios Douvikas","position":"ST","season":"2026/27","competition":"Serie A","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":2,"chancesCreated":2}},{"id":"p_sa_12","name":"Rasmus Højlund","position":"ST","season":"2026/27","competition":"Serie A","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":2,"chancesCreated":1}},{"id":"p_sa_13","name":"Ché Adams","position":"ST","season":"2026/27","competition":"Serie A","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":2,"chancesCreated":0}},{"id":"p_sa_14","name":"Gustavo Varela","position":"ST","season":"2026/27","competition":"Serie A","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":1,"chancesCreated":0}},{"id":"p_sa_15","name":"Alphadjo Cissè","position":"CAM","season":"2026/27","competition":"Serie A","leaguePosition":5,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":3,"chancesCreated":3}},{"id":"p_sa_16","name":"Ricardo Mangas","position":"LB","season":"2026/27","competition":"Serie A","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":0,"assists":2,"tackles":9,"chancesCreated":3}},{"id":"p_sa_17","name":"Samuel Chukwueze","position":"RWF","season":"2026/27","competition":"Serie A","leaguePosition":5,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":0,"assists":2,"dribbles":4,"chancesCreated":5}},{"id":"p_sa_18","name":"Kevin De Bruyne","position":"CAM","season":"2026/27","competition":"Serie A","leaguePosition":0,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":1,"dribbles":3,"chancesCreated":7}},{"id":"p_sa_19","name":"Federico Dimarco","position":"LB","season":"2026/27","competition":"Serie A","leaguePosition":3,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":0,"assists":1,"tackles":8,"chancesCreated":6}},{"id":"p_sa_20","name":"Mattia Zaccagni","position":"LWF","season":"2026/27","competition":"Serie A","leaguePosition":1,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":1,"dribbles":4,"chancesCreated":4}},{"id":"p_l1_01","name":"Amine Gouiri","position":"ST","season":"2026/27","competition":"Ligue 1","leaguePosition":11,"goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":4,"assists":0,"dribbles":6,"chancesCreated":2}},{"id":"p_l1_02","name":"Kamory Doumbia","position":"CAM","season":"2026/27","competition":"Ligue 1","leaguePosition":7,"goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":4,"assists":0,"dribbles":7,"chancesCreated":5}},{"id":"p_l1_03","name":"Lassine Sinayoko","position":"RWF","season":"2026/27","competition":"Ligue 1","leaguePosition":4,"goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":4,"assists":0,"dribbles":4,"chancesCreated":3}},{"id":"p_l1_04","name":"Esteban Lepaul","position":"ST","season":"2026/27","competition":"Ligue 1","leaguePosition":1,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":3,"assists":1,"dribbles":4,"chancesCreated":5}},{"id":"p_l1_05","name":"Florian Thauvin","position":"RWF","season":"2026/27","competition":"Ligue 1","leaguePosition":10,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":3,"assists":0,"dribbles":8,"chancesCreated":6}},{"id":"p_l1_06","name":"Ferran Torres","position":"LWF","season":"2026/27","competition":"Ligue 1","leaguePosition":14,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":3,"chancesCreated":3}},{"id":"p_l1_07","name":"Ousmane Dembélé","position":"RWF","season":"2026/27","competition":"Ligue 1","leaguePosition":14,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":1,"dribbles":10,"chancesCreated":11}},{"id":"p_l1_08","name":"Paris Brunner","position":"ST","season":"2026/27","competition":"Ligue 1","leaguePosition":2,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":3,"assists":0,"dribbles":3,"chancesCreated":2}},{"id":"p_l1_09","name":"Loïs Openda","position":"ST","season":"2026/27","competition":"Ligue 1","leaguePosition":3,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":1,"dribbles":6,"chancesCreated":5}},{"id":"p_l1_10","name":"Olivier Giroud","position":"ST","season":"2026/27","competition":"Ligue 1","leaguePosition":5,"goldenBoot":0,"assistLeader":1,"mvp":0,"stats":{"goals":1,"assists":2,"dribbles":1,"chancesCreated":4}},{"id":"p_l1_11","name":"Gessime Yassine","position":"RWF","season":"2026/27","competition":"Ligue 1","leaguePosition":6,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":5,"chancesCreated":4}},{"id":"p_l1_12","name":"Marquinhos","position":"CB","season":"2026/27","competition":"Ligue 1","leaguePosition":14,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"tackles":12,"chancesCreated":1}},{"id":"p_l1_13","name":"Sam Amo-Ameyaw","position":"RWF","season":"2026/27","competition":"Ligue 1","leaguePosition":6,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":6,"chancesCreated":3}},{"id":"p_l1_14","name":"Joao Neves","position":"CM","season":"2026/27","competition":"Ligue 1","leaguePosition":14,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":0,"assists":2,"tackles":12,"chancesCreated":6}},{"id":"p_l1_15","name":"Achraf Hakimi","position":"RB","season":"2026/27","competition":"Ligue 1","leaguePosition":14,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":0,"assists":2,"tackles":9,"chancesCreated":8}},{"id":"p_l1_16","name":"Maghnes Akliouche","position":"CAM","season":"2026/27","competition":"Ligue 1","leaguePosition":2,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":1,"dribbles":6,"chancesCreated":8}},{"id":"p_l1_17","name":"Lee Kang-in","position":"RWF","season":"2026/27","competition":"Ligue 1","leaguePosition":14,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":1,"dribbles":5,"chancesCreated":9}},{"id":"p_l1_18","name":"Brice Samba","position":"GK","season":"2026/27","competition":"Ligue 1","leaguePosition":1,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"cleanSheets":2,"saves":11,"penaltySaves":0,"goals":0,"assists":0}},{"id":"p_l1_19","name":"Lukáš Hrádecký","position":"GK","season":"2026/27","competition":"Ligue 1","leaguePosition":2,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"cleanSheets":2,"saves":10,"penaltySaves":0,"goals":0,"assists":0}},{"id":"p_l1_20","name":"Kevin Trapp","position":"GK","season":"2026/27","competition":"Ligue 1","leaguePosition":4,"goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"cleanSheets":2,"saves":12,"penaltySaves":0,"goals":0,"assists":0}},{"id":"p_ucl_01","name":"Ousmane Dembélé","position":"RWF","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":1,"mvp":0,"stats":{"goals":2,"assists":2,"dribbles":5,"chancesCreated":6}},{"id":"p_ucl_02","name":"Ferran Torres","position":"LWF","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":3,"assists":0,"dribbles":2,"chancesCreated":2}},{"id":"p_ucl_03","name":"Ermedin Demirović","position":"ST","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":1,"assistLeader":0,"mvp":0,"stats":{"goals":3,"assists":0,"dribbles":1,"chancesCreated":2}},{"id":"p_ucl_04","name":"Lamine Yamal","position":"RWF","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":2,"dribbles":7,"chancesCreated":5}},{"id":"p_ucl_05","name":"Raphinha","position":"LWF","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":4,"chancesCreated":5}},{"id":"p_ucl_06","name":"Michael Olise","position":"RWF","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":3,"chancesCreated":4}},{"id":"p_ucl_07","name":"Erling Haaland","position":"ST","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":2,"chancesCreated":3}},{"id":"p_ucl_08","name":"Serhou Guirassy","position":"ST","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":1,"chancesCreated":2}},{"id":"p_ucl_09","name":"Marc Bartra","position":"CB","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"tackles":4,"chancesCreated":1}},{"id":"p_ucl_10","name":"Danijel Šturm","position":"ST","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":2,"assists":0,"dribbles":1,"chancesCreated":1}},{"id":"p_ucl_11","name":"Deniz Undav","position":"CAM","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":1,"mvp":0,"stats":{"goals":0,"assists":2,"dribbles":2,"chancesCreated":4}},{"id":"p_ucl_12","name":"Nicolás Paz","position":"CAM","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":1,"mvp":0,"stats":{"goals":0,"assists":2,"dribbles":3,"chancesCreated":5}},{"id":"p_ucl_13","name":"Pau Torres","position":"CB","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":1,"mvp":0,"stats":{"goals":0,"assists":2,"tackles":6,"chancesCreated":2}},{"id":"p_ucl_14","name":"Joshua Kimmich","position":"CDM","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":0,"assists":1,"dribbles":3,"chancesCreated":6}},{"id":"p_ucl_15","name":"Kylian Mbappé","position":"ST","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":0,"dribbles":4,"chancesCreated":3}},{"id":"p_ucl_16","name":"Bruno Fernandes","position":"CAM","season":"2026/27","competition":"Champions League","stage":"none","goldenBoot":0,"assistLeader":0,"mvp":0,"stats":{"goals":1,"assists":0,"dribbles":2,"chancesCreated":4}}];
+
+  function setStorageStatus(state){
+    const el = document.querySelector('#storageStatus');
+    if(!el) return;
+    if(state === 'ok') el.textContent = `${players.length} player records loaded · View only`;
+    else if(state === 'fallback') el.textContent = `${players.length} player records loaded · Offline fallback · View only`;
+    else el.textContent = 'Roster could not be loaded';
+  }
+
+// ---------- Public roster data ----------
   // The public website is VIEW-ONLY. Player data is read from players.json
   // in the same GitHub Pages repository. Only the repository owner can edit
   // that file, so public visitors cannot add or change players from the site.
@@ -491,19 +502,16 @@
       const response = await fetch('./players.json?cacheBust=' + Date.now(), {
         cache: 'no-store'
       });
-
       if(!response.ok) throw new Error('players.json could not be loaded');
 
       const raw = await response.json();
-      players = Array.isArray(raw)
-        ? raw.map(normalizeRecord).filter(Boolean)
-        : [];
-
+      players = Array.isArray(raw) ? raw.map(normalizeRecord).filter(Boolean) : [];
+      if(!players.length) throw new Error('No player records found');
       setStorageStatus('ok');
     }catch(e){
-      console.error('Roster load failed:',e);
-      players = [];
-      setStorageStatus('error');
+      console.error('Roster load failed:', e);
+      players = FALLBACK_PLAYERS.map(normalizeRecord).filter(Boolean);
+      setStorageStatus('fallback');
     }
   }
 
@@ -560,181 +568,7 @@
     select.value='__overall__';
   }
 
-  function buildFormCompetitionOptions(){
-    const select=$('#f-competition');
-    select.innerHTML='';
-
-    const groups=[
-      {label:'League Competitions',items:LEAGUES},
-      {label:'Cup Competitions',items:CLUB_CUPS},
-      {label:'International Competitions',items:INTERNATIONAL}
-    ];
-
-    groups.forEach(g=>{
-      const og=document.createElement('optgroup');
-      og.label=g.label;
-
-      g.items.forEach(name=>{
-        const opt=document.createElement('option');
-        opt.value=name;
-        opt.textContent=name;
-        og.appendChild(opt);
-      });
-
-      select.appendChild(og);
-    });
-  }
-
   buildCompetitionOptions();
-  buildFormCompetitionOptions();
-
-  // ---------- Add competition form ----------
-  function readFormPlayer(){
-    const position=$('#f-position').value;
-    const group=POSITION_GROUP[position];
-    const mult=MULTIPLIERS[group];
-    const stats={};
-
-    Object.keys(mult).forEach(key=>{
-      const inp=$(`#f-stats input[data-stat="${key}"]`);
-      stats[key]=inp ? (Number(inp.value)||0) : 0;
-    });
-
-    return {
-      position,
-      season:$('#f-season').value.trim() || '2026/27',
-      competition:$('#f-competition').value,
-      leaguePosition:Number($('#f-league-position').value)||0,
-      stage:$('#f-stage').value,
-      goldenBoot:Number($('#f-goldenboot').value)||0,
-      assistLeader:Number($('#f-assistleader').value)||0,
-      mvp:Number($('#f-mvp').value)||0,
-      finalMvp:Number($('#f-finalmvp').value)||0,
-      stats
-    };
-  }
-
-  function updateCompetitionFields(){
-    const comp=getCompetition($('#f-competition').value);
-    const isLeague=comp.type==='league';
-
-    $('#f-league-wrap').style.display=isLeague ? 'block' : 'none';
-    $('#f-stage-wrap').style.display=isLeague ? 'none' : 'block';
-    $('#f-finalmvp-wrap').style.display=isLeague ? 'none' : 'block';
-
-    updatePreview();
-  }
-
-  function updatePreview(){
-    const record=readFormPlayer();
-    const score=calcRecord(record);
-    const comp=getCompetition(record.competition);
-
-    const parts=[
-      `Performance ${score.statScore}`,
-      `${comp.type==='league' ? 'League position' : 'Stage'} +${score.competitionBonus}`,
-      `Awards +${score.awards}`
-    ];
-
-    $('#scorePreview').innerHTML=
-      `Competition Score: <b>${score.total}</b>
-       <span style="font-family:'Manrope',sans-serif;font-size:12px;color:var(--ink-faint);letter-spacing:0;">
-       (${parts.join(' · ')})</span>`;
-  }
-
-  function renderStatFields(){
-    const group=POSITION_GROUP[$('#f-position').value];
-    const mult=MULTIPLIERS[group];
-    const wrap=$('#f-stats');
-
-    wrap.innerHTML='';
-
-    Object.keys(mult).forEach(key=>{
-      const div=document.createElement('div');
-      div.className='field';
-      div.innerHTML=
-        `<label>${STAT_LABELS[key]} (×${mult[key]})</label>
-         <input type="number" min="0" step="1" value="0" data-stat="${key}">`;
-      wrap.appendChild(div);
-    });
-
-    wrap.querySelectorAll('input[data-stat]').forEach(inp=>{
-      inp.addEventListener('input',updatePreview);
-    });
-
-    updatePreview();
-  }
-
-  $('#f-position').addEventListener('change',renderStatFields);
-  $('#f-competition').addEventListener('change',updateCompetitionFields);
-  $('#f-league-position').addEventListener('change',updatePreview);
-  $('#f-stage').addEventListener('change',updatePreview);
-  $('#f-goldenboot').addEventListener('input',updatePreview);
-  $('#f-assistleader').addEventListener('input',updatePreview);
-  $('#f-mvp').addEventListener('input',updatePreview);
-  $('#f-finalmvp').addEventListener('change',updatePreview);
-
-  renderStatFields();
-  updateCompetitionFields();
-
-  $('#playerForm').addEventListener('submit',async e=>{
-    e.preventDefault();
-
-    const name=$('#f-name').value.trim();
-    if(!name) return;
-
-    const record=Object.assign(
-      {
-        id:'p_'+Date.now()+'_'+Math.random().toString(36).slice(2,7),
-        name
-      },
-      readFormPlayer()
-    );
-
-    // Prevent accidentally entering the same player/competition twice.
-    const duplicate=players.some(p=>
-      p.name.toLowerCase()===record.name.toLowerCase() &&
-      p.season===record.season &&
-      p.competition===record.competition
-    );
-
-    if(duplicate){
-      const msg=$('#saveMsg');
-      msg.textContent='This player already has a record for that competition and season.';
-      msg.classList.remove('ok');
-      msg.classList.add('err','show');
-      setTimeout(()=>msg.classList.remove('show'),4000);
-      return;
-    }
-
-    players.push(record);
-    const ok=await savePlayers();
-    const score=calcRecord(record);
-    const msg=$('#saveMsg');
-
-    if(!ok){
-      msg.textContent=
-        `${record.name} was added for this session, but auto-save failed. Export the roster to keep it.`;
-      msg.classList.remove('ok');
-      msg.classList.add('err','show');
-    }else{
-      msg.textContent=
-        `${record.name} — ${record.competition}: ${score.total} SPS points added.`;
-      msg.classList.remove('err');
-      msg.classList.add('ok','show');
-    }
-
-    setTimeout(()=>msg.classList.remove('show'),5000);
-
-    $('#playerForm').reset();
-    $('#f-season').value=record.season;
-    $('#f-competition').value=record.competition;
-    renderStatFields();
-    updateCompetitionFields();
-
-    setTab('rankings');
-    renderRankings(record.id);
-  });
 
   // ---------- Overall SPS Ballon d'Or ----------
   function getOverallRanking(){
@@ -786,7 +620,7 @@
 
       if(entries.length===0){
         wrap.innerHTML=
-          `<div class="empty">No season records yet. Switch on Admin Mode to add competition records.</div>`;
+          `<div class="empty">No season records found in the roster.</div>`;
         return;
       }
 
