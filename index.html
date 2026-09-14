@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spark Point Soccer — Rating System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-0:#030806;
+    --bg-1:#07120d;
+    --bg-2:#0b1c13;
+    --line:#163b28;
+    --line-soft:#0f2a1d;
+    --gold:#20c86b;
+    --gold-bright:#55f28f;
+    --gold-dim:#17884a;
+    --ink:#e8fff1;
+    --ink-dim:#91b9a2;
+    --ink-faint:#587d68;
+    --pitch:#123d26;
+
+    --c-attack:#e2574c;
+    --c-attack2:#e8a33d;
+    --c-mid:#3f7ff2;
+    --c-mid2:#2fb8a6;
+    --c-def:#9270e6;
+    --c-gk:#39bfe8;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(1200px 700px at 15% -10%, #0b3a21 0%, transparent 60%),
+      radial-gradient(1000px 600px at 100% 0%, #092818 0%, transparent 55%),
+      var(--bg-0);
+    color:var(--ink);
+    font-family:'Manrope', system-ui, sans-serif;
+    min-height:100vh;
+  }
+
+  .headline, .num, .navlink, .tag, .brand-title{font-family:'Teko', sans-serif; letter-spacing:.02em;}
+
+  /* ===== Header ===== */
+  header.top{
+    padding:34px 20px 0;
+    text-align:center;
+    position:relative;
+  }
+  .stars-row{
+    display:flex; align-items:center; justify-content:center; gap:14px;
+    color:var(--gold); font-size:15px; margin-bottom:6px;
+  }
+  .stars-row .rule{width:64px; height:1px; background:linear-gradient(90deg, transparent, var(--gold-dim), transparent);}
+  .brand{
+    display:flex; align-items:center; justify-content:center; gap:16px;
+    margin-bottom:4px;
+  }
+  .crest{
+    width:56px; height:56px; flex:none;
+  }
+  .brand-title{
+    font-size:56px; line-height:.85; font-weight:600;
+    background:linear-gradient(180deg, #baffd3 0%, var(--gold) 55%, #0e713d 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow:0 1px 0 rgba(0,0,0,.3);
+  }
+  .brand-sub{
+    color:var(--ink-dim); font-size:12.5px; letter-spacing:.28em; font-weight:700;
+    margin-top:2px;
+  }
+  .chevron{
+    display:inline-block; margin:22px auto 0; padding:9px 34px;
+    background:linear-gradient(180deg, #0d2518, #06130c);
+    border:1px solid var(--gold-dim);
+    clip-path:polygon(3% 0, 97% 0, 100% 50%, 97% 100%, 3% 100%, 0 50%);
+    color:var(--gold-bright); font-family:'Teko',sans-serif; font-size:22px; letter-spacing:.14em; font-weight:600;
+  }
+
+  /* ===== Nav ===== */
+  nav.tabs{
+    display:flex; justify-content:center; gap:6px; margin:26px auto 0;
+    flex-wrap:wrap; padding:0 16px;
+  }
+  nav.tabs button{
+    background:transparent; border:1px solid transparent; color:var(--ink-dim);
+    font-family:'Teko',sans-serif; font-size:19px; letter-spacing:.08em; font-weight:500;
+    padding:9px 20px; cursor:pointer; border-radius:3px; transition:color .15s, border-color .15s, background .15s;
+  }
+  nav.tabs button:hover{color:var(--ink);}
+  nav.tabs button.active{
+    color:var(--gold-bright); border-color:var(--gold-dim); background:rgba(32,200,107,.07);
+  }
+
+  .admin-toggle{
+    display:flex; align-items:center; gap:8px; justify-content:center; margin:14px 0 0;
+    font-size:12.5px; color:var(--ink-faint);
+  }
+  .switch{
+    width:34px; height:19px; background:#1a2740; border:1px solid var(--line); border-radius:20px;
+    position:relative; cursor:pointer; flex:none; transition:background .15s;
+  }
+  .switch .knob{
+    width:13px; height:13px; border-radius:50%; background:var(--ink-faint);
+    position:absolute; top:2px; left:2px; transition:left .15s, background .15s;
+  }
+  .switch.on{background:rgba(32,200,107,.25); border-color:var(--gold-dim);}
+  .switch.on .knob{left:17px; background:var(--gold-bright);}
+
+  main{max-width:980px; margin:0 auto; padding:30px 18px 80px;}
+  section.panel{display:none;}
+  section.panel.active{display:block;}
+
+  .card{
+    background:linear-gradient(180deg, var(--bg-2), var(--bg-1));
+    border:1px solid var(--line); border-radius:6px; padding:20px 22px; margin-bottom:18px;
+  }
+  .card-head{
+    display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:14px;
+    border-bottom:1px solid var(--line-soft); padding-bottom:10px;
+  }
+  .card-head h2{
+    font-family:'Teko',sans-serif; font-weight:600; font-size:24px; letter-spacing:.04em; margin:0; color:var(--ink);
+  }
+  .card-head .hint{font-size:12px; color:var(--ink-faint);}
+
+  label{display:block; font-size:12px; color:var(--ink-dim); margin-bottom:5px; font-weight:600;}
+  select, input[type=text], input[type=number]{
+    width:100%; background:#0c1626; border:1px solid var(--line); color:var(--ink);
+    padding:9px 10px; border-radius:4px; font-family:'Manrope',sans-serif; font-size:14px;
+  }
+  select:focus, input:focus{outline:2px solid var(--gold-dim); outline-offset:1px;}
+
+  .field{margin-bottom:14px;}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .grid-stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px;}
+
+  .btn{
+    background:linear-gradient(180deg, var(--gold-bright), var(--gold));
+    color:#03170b; border:none; font-family:'Teko',sans-serif; font-weight:600; font-size:19px; letter-spacing:.04em;
+    padding:10px 26px; border-radius:4px; cursor:pointer;
+  }
+  .btn:hover{filter:brightness(1.06);}
+  .btn.ghost{
+    background:transparent; border:1px solid var(--line); color:var(--ink-dim); font-size:14px; padding:6px 12px; font-family:'Manrope',sans-serif; font-weight:600;
+  }
+  .btn.ghost:hover{border-color:var(--gold-dim); color:var(--gold-bright);}
+
+  .msg{font-size:13px; padding:9px 12px; border-radius:4px; margin-top:12px; display:none;}
+  .msg.show{display:block;}
+  .msg.ok{background:rgba(47,184,166,.12); border:1px solid rgba(47,184,166,.4); color:#7fe0d2;}
+  .msg.err{background:rgba(226,87,76,.12); border:1px solid rgba(226,87,76,.45); color:#f0968d;}
+
+  /* position badges */
+  .pos{
+    display:inline-block; font-family:'Teko',sans-serif; font-weight:600; font-size:14px; letter-spacing:.03em;
+    padding:2px 9px; border-radius:3px; color:#0b0f18;
+  }
+  .pos-ST, .pos-CAM{background:var(--c-attack);}
+  .pos-CAM{background:var(--c-attack2);}
+  .pos-CM, .pos-CDM{background:var(--c-mid);}
+  .pos-CDM{background:var(--c-mid2);}
+  .pos-CB, .pos-LB, .pos-RB{background:var(--c-def); color:#fff;}
+  .pos-GK{background:var(--c-gk);}
+
+  /* rankings table */
+  .rank-row{
+    display:grid; grid-template-columns:38px 1fr auto auto; align-items:center; gap:12px;
+    padding:10px 4px; border-bottom:1px solid var(--line-soft); cursor:pointer;
+  }
+  .rank-row:last-child{border-bottom:none;}
+  .rank-row:hover{background:rgba(217,174,78,.04);}
+  .rank-row.new-entry{animation:flashRow 1.6s ease-out;}
+  @keyframes flashRow{
+    0%{background:rgba(217,174,78,.28);}
+    100%{background:transparent;}
+  }
+  .rank-num{font-family:'Teko',sans-serif; font-size:24px; color:var(--gold-dim); text-align:center;}
+  .rank-row:nth-child(1) .rank-num{color:var(--gold-bright); font-size:28px;}
+  .rank-row:nth-child(2) .rank-num, .rank-row:nth-child(3) .rank-num{color:var(--gold);}
+  .rank-name{font-weight:700; font-size:14.5px;}
+  .rank-score{font-family:'Teko',sans-serif; font-size:24px; color:var(--gold-bright); text-align:right; min-width:48px;}
+  .rank-del{background:none; border:none; color:var(--ink-faint); cursor:pointer; font-size:16px; padding:2px 6px;}
+  .rank-del:hover{color:#e2574c;}
+  .breakdown{
+    grid-column:1/-1; font-size:12px; color:var(--ink-dim); padding:2px 0 10px 50px;
+  }
+  .breakdown span{margin-right:14px;}
+  .breakdown b{color:var(--gold-bright);}
+  .empty{color:var(--ink-faint); font-size:13.5px; padding:20px 4px; text-align:center;}
+  .preview-score{
+    font-family:'Teko',sans-serif; font-size:22px; color:var(--gold-bright);
+    border:1px dashed var(--line); border-radius:4px; padding:8px 14px; letter-spacing:.03em;
+  }
+  .warn{color:#e8a33d !important;}
+
+  /* rules tab */
+  .rule-card h3{
+    font-family:'Teko',sans-serif; font-size:19px; font-weight:600; letter-spacing:.03em; margin:0 0 8px; color:var(--gold-bright);
+  }
+  table.ref{width:100%; border-collapse:collapse; font-size:13px;}
+  table.ref td{padding:5px 4px; border-bottom:1px solid var(--line-soft);}
+  table.ref td:last-child{text-align:right; color:var(--gold); font-weight:700; font-family:'Teko',sans-serif; font-size:16px;}
+  .stage-row{display:flex; justify-content:space-between; font-size:13px; padding:6px 2px; border-bottom:1px solid var(--line-soft);}
+  .stage-row b{color:var(--gold); font-family:'Teko',sans-serif; font-size:16px;}
+
+  .status-card{
+    display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  }
+  .status-badge{
+    font-family:'Teko',sans-serif; font-size:15px; letter-spacing:.06em; color:var(--gold-bright);
+    border:1px solid var(--gold-dim); padding:5px 14px; border-radius:3px; background:rgba(32,200,107,.07);
+  }
+
+  footer{
+    text-align:center; padding:26px 16px 40px; color:var(--gold-dim);
+    font-family:'Teko',sans-serif; font-size:15px; letter-spacing:.18em;
+  }
+  footer .rule2{width:40px; height:1px; background:var(--gold-dim); display:inline-block; vertical-align:middle; margin:0 12px;}
+
+  @media (max-width:560px){
+    .brand-title{font-size:38px;}
+    .brand{gap:10px;}
+    .crest{width:40px; height:40px;}
+    .chevron{font-size:17px; padding:8px 18px;}
+    nav.tabs button{font-size:16px; padding:7px 13px;}
+  }
+
+  .competition-meta{
+    display:inline-flex; align-items:center; gap:7px; flex-wrap:wrap;
+    font-size:11px; color:var(--ink-faint);
+  }
+  .type-badge{
+    display:inline-block; padding:2px 7px; border:1px solid var(--line);
+    border-radius:3px; color:var(--gold); font-family:'Teko',sans-serif;
+    font-size:13px; letter-spacing:.04em;
+  }
+  .overall-row{
+    display:grid; grid-template-columns:38px 1fr auto; align-items:center;
+    gap:12px; padding:11px 4px; border-bottom:1px solid var(--line-soft);
+  }
+  .overall-row:last-child{border-bottom:none;}
+  .overall-name{font-weight:800; font-size:14.5px;}
+  .overall-score{
+    font-family:'Teko',sans-serif; font-size:25px;
+    color:var(--gold-bright); min-width:60px; text-align:right;
+  }
+  .overall-breakdown{
+    grid-column:1/-1; padding:3px 0 10px 50px;
+    color:var(--ink-dim); font-size:12px; line-height:1.7;
+  }
+
+  /* Admin edit modal */
+  .modal-backdrop{
+    position:fixed; inset:0; z-index:1000;
+    display:none; align-items:center; justify-content:center;
+    padding:18px; background:rgba(0,0,0,.78);
+  }
+  .modal-backdrop.show{display:flex;}
+  .modal{
+    width:min(720px,100%); max-height:90vh; overflow:auto;
+    background:var(--panel); border:1px solid rgba(60,220,120,.35);
+    border-radius:18px; box-shadow:0 24px 80px rgba(0,0,0,.55);
+    padding:20px;
+  }
+  .modal-head{
+    display:flex; align-items:flex-start; justify-content:space-between;
+    gap:14px; margin-bottom:16px;
+  }
+  .modal-head h2{margin:0; color:var(--ink);}
+  .modal-close{
+    border:1px solid var(--line); background:transparent; color:var(--ink-dim);
+    width:36px; height:36px; border-radius:10px; cursor:pointer; font-size:18px;
+  }
+  .modal-close:hover{color:var(--green); border-color:var(--green);}
+  .edit-actions{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;}
+  .rank-actions{display:flex; gap:7px; justify-content:flex-end; align-items:center;}
+  .rank-edit{
+    border:1px solid rgba(60,220,120,.5); background:rgba(60,220,120,.08);
+    color:var(--green); border-radius:8px; padding:6px 9px; cursor:pointer;
+    font-family:inherit; font-size:11px; font-weight:800;
+  }
+  .rank-edit:hover{background:rgba(60,220,120,.18);}
+
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="stars-row"><span class="rule"></span>★<span class="rule"></span></div>
+  <div class="brand">
+    <svg class="crest" viewBox="0 0 64 64" fill="none">
+      <polygon points="32,4 40,16 56,16 46,28 50,44 32,36 14,44 18,28 8,16 24,16" fill="url(#g1)" stroke="#9c7c34" stroke-width="1"/>
+      <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2cf"/><stop offset="1" stop-color="#c99c3d"/></linearGradient></defs>
+    </svg>
+    <div>
+      <div class="brand-title">SPARK POINT<br>SOCCER</div>
+    </div>
+  </div>
+  <div class="brand-sub">THE ULTIMATE FOOTBALL RATING SYSTEM</div>
+  <div class="chevron">COMPLETE RANKING SYSTEM</div>
+
+  <nav class="tabs">
+    <button data-tab="rankings" class="active">Rankings</button>
+    <button data-tab="add" id="addTabBtn" style="display:none;">Add Player</button>
+    <button data-tab="rules">Rules</button>
+  </nav>
+  <div class="admin-toggle">
+    <span>Admin Mode</span>
+    <div class="switch" id="adminSwitch"><div class="knob"></div></div>
+    <span style="color:var(--ink-faint);">(this device only — no account)</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= RANKINGS ================= -->
+  <section class="panel active" id="panel-rankings">
+    <div class="card status-card">
+      <div>
+        <div class="card-head" style="border:none; margin:0; padding:0;"><h2 style="font-size:18px;">Champions League</h2></div>
+        <div class="hint" style="color:var(--ink-dim); font-size:12.5px;">2026/27 season</div>
+      </div>
+      <div class="status-badge">Tournament Yet to Start</div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>Top 20</h2>
+        <span class="hint" id="storageStatus">Ranked automatically by total Spark Points</span>
+      </div>
+      <div class="field" style="max-width:360px;">
+        <label>List</label>
+        <select id="listSelect"></select>
+      </div>
+      <div style="display:flex; gap:10px; margin-bottom:16px;">
+        <button type="button" class="btn ghost" id="exportBtn">⬇ Export Roster (.json)</button>
+        <button type="button" class="btn ghost" id="importBtn">⬆ Import Roster (.json)</button>
+        <input type="file" id="importFile" accept="application/json,.json" style="display:none;">
+      </div>
+      <div class="msg ok" id="ioMsg" style="margin-bottom:12px;"></div>
+      <div id="rankList"></div>
+    </div>
+  </section>
+
+  <!-- ================= ADD COMPETITION RECORD ================= -->
+  <section class="panel" id="panel-add">
+    <div class="card">
+      <div class="card-head">
+        <h2>Add Player Competition Record</h2>
+        <span class="hint">Admin only</span>
+      </div>
+
+      <form id="playerForm">
+        <div class="grid2">
+          <div class="field">
+            <label>Player Name</label>
+            <input type="text" id="f-name" placeholder="e.g. Lamine Yamal" required>
+          </div>
+          <div class="field">
+            <label>Season</label>
+            <input type="text" id="f-season" value="2026/27" required>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label>Position</label>
+            <select id="f-position">
+              <option value="ST">Striker (ST)</option>
+<option value="RWF">Right Wing Forward (RWF)</option>
+<option value="LWF">Left Wing Forward (LWF)</option>
+<option value="RWF">Right Wing Forward (RWF)</option>
+<option value="LWF">Left Wing Forward (LWF)</option>
+              <option value="CAM">Attacking Midfielder (CAM)</option>
+              <option value="CM">Central Midfielder (CM)</option>
+              <option value="CDM">Defensive Midfielder (CDM)</option>
+              <option value="CB">Centre-Back (CB)</option>
+              <option value="LB">Left-Back (LB)</option>
+              <option value="RB">Right-Back (RB)</option>
+              <option value="GK">Goalkeeper (GK)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Competition</label>
+            <select id="f-competition"></select>
+          </div>
+        </div>
+
+        <div class="field" id="f-league-wrap" style="display:none;">
+          <label>Final League Position of Club</label>
+          <select id="f-league-position">
+            <option value="0">6th or lower / not ranked 1–5</option>
+            <option value="1">1st — +5 points</option>
+            <option value="2">2nd — +4 points</option>
+            <option value="3">3rd — +3 points</option>
+            <option value="4">4th — +2 points</option>
+            <option value="5">5th — +1 point</option>
+          </select>
+        </div>
+
+        <div class="field" id="f-stage-wrap" style="display:none;">
+          <label>Furthest Stage Reached</label>
+          <select id="f-stage">
+            <option value="none">Did not reach Round of 16</option>
+            <option value="r16">Round of 16 — +1</option>
+            <option value="qf">Quarter-final — +2</option>
+            <option value="sf">Semi-final — +3</option>
+            <option value="final">Final — +4</option>
+            <option value="champion">Winner — +5</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Individual Stats for This Competition</label>
+          <div class="grid-stats" id="f-stats"></div>
+        </div>
+
+        <div class="field">
+          <label>Competition Awards</label>
+          <div class="grid2">
+            <div>
+              <label style="font-weight:400; color:var(--ink-dim);">Golden Boot wins (×3 each)</label>
+              <input type="number" id="f-goldenboot" min="0" step="1" value="0">
+            </div>
+            <div>
+              <label style="font-weight:400; color:var(--ink-dim);">Assist Leader wins (×3 each)</label>
+              <input type="number" id="f-assistleader" min="0" step="1" value="0">
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="grid2">
+            <div>
+              <label>MVP awards in this competition (×2 each)</label>
+              <input type="number" id="f-mvp" min="0" step="1" value="0">
+            </div>
+            <div id="f-finalmvp-wrap" style="display:none;">
+              <label>Final MVP (+5)</label>
+              <select id="f-finalmvp">
+                <option value="0">No</option>
+                <option value="1">Yes — +5</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="preview-score" id="scorePreview">Competition Score: 0</div>
+        </div>
+
+        <button type="submit" class="btn">Save Competition Record</button>
+        <div class="msg ok" id="saveMsg">Competition record saved.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= RULES ================= -->
+
+    <div class="card rule-card">
+      <div class="card-head"><h2>New SPS Ballon d'Or System</h2></div>
+      <p style="font-size:13.5px; color:var(--ink-dim); line-height:1.8; margin:0;">
+        The old Ballon d'Or-specific trophy and award scoring system has been removed.
+        A player's Ballon d'Or total is simply the sum of the points earned in every
+        competition played during the season.
+      </p>
+      <div class="preview-score" style="margin-top:14px; display:block; text-align:center;">
+        Total = League + Cups + International + Every Other Competition
+      </div>
+    </div>
+
+    <div class="card rule-card">
+      <div class="card-head"><h2>League Competition</h2></div>
+      <div class="stage-row"><span>Club finishes 1st</span><b>+5</b></div>
+      <div class="stage-row"><span>Club finishes 2nd</span><b>+4</b></div>
+      <div class="stage-row"><span>Club finishes 3rd</span><b>+3</b></div>
+      <div class="stage-row"><span>Club finishes 4th</span><b>+2</b></div>
+      <div class="stage-row"><span>Club finishes 5th</span><b>+1</b></div>
+      <div class="hint" style="margin-top:10px;">Every player in the club receives the points for the club's final league position.</div>
+    </div>
+
+    <div class="card rule-card">
+      <div class="card-head"><h2>Cup / Knockout Competition</h2></div>
+      <div class="stage-row"><span>Round of 16</span><b>+1</b></div>
+      <div class="stage-row"><span>Quarter-final</span><b>+2</b></div>
+      <div class="stage-row"><span>Semi-final</span><b>+3</b></div>
+      <div class="stage-row"><span>Final</span><b>+4</b></div>
+      <div class="stage-row"><span>Winner</span><b>+5</b></div>
+      <div class="hint" style="margin-top:10px;">The score is based on the furthest stage reached. The winner receives +5 for winning the competition.</div>
+    </div>
+
+    <div class="card rule-card">
+      <div class="card-head"><h2>Individual Performance Rules</h2></div>
+      <div class="grid2">
+        <div>
+          <h3>Attackers (ST, CAM)</h3>
+          <table class="ref">
+            <tr><td>Goals</td><td>×3</td></tr>
+            <tr><td>Assists</td><td>×2</td></tr>
+            <tr><td>Successful Dribbles</td><td>×1</td></tr>
+            <tr><td>Chances Created</td><td>×1</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3>Midfielders (CM, CDM)</h3>
+          <table class="ref">
+            <tr><td>Goals</td><td>×2</td></tr>
+            <tr><td>Assists</td><td>×3</td></tr>
+            <tr><td>Successful Dribbles</td><td>×1</td></tr>
+            <tr><td>Chances Created</td><td>×1</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3>Defenders (CB, LB, RB)</h3>
+          <table class="ref">
+            <tr><td>Goals</td><td>×2</td></tr>
+            <tr><td>Assists</td><td>×3</td></tr>
+            <tr><td>Successful Tackles</td><td>×1</td></tr>
+            <tr><td>Chances Created</td><td>×1</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3>Goalkeepers (GK)</h3>
+          <table class="ref">
+            <tr><td>Clean Sheets</td><td>×3</td></tr>
+            <tr><td>Saves</td><td>×1</td></tr>
+            <tr><td>Penalty Saves</td><td>×5</td></tr>
+            <tr><td>Goals</td><td>×2</td></tr>
+            <tr><td>Assists</td><td>×2</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="hint" style="margin-top:12px;">Successful dribbles remain an offensive/midfield stat; successful tackles remain the defender performance stat, following the normal SPS rules.</div>
+    </div>
+
+    <div class="card rule-card">
+      <div class="card-head"><h2>Special Awards</h2></div>
+      <div class="stage-row"><span>Golden Boot</span><b>×3</b></div>
+      <div class="stage-row"><span>Assist Leader</span><b>×3</b></div>
+      <div class="stage-row"><span>MVP</span><b>×2</b></div>
+      <div class="stage-row"><span>Cup Final MVP</span><b>+5</b></div>
+      <div class="hint" style="margin-top:10px;">All MVP awards received during the season are counted in their respective competitions.</div>
+    </div>
+
+    <div class="card rule-card">
+      <div class="card-head"><h2>Ballon d'Or Calculation</h2></div>
+      <p style="font-size:13.5px; color:var(--ink-dim); line-height:1.8; margin:0;">
+        Each competition is scored separately. After every competition has been scored,
+        all of that player's competition totals for the season are added together.
+        The player with the highest total wins the SPS Ballon d'Or.
+      </p>
+    </div>
+
+
+  <!-- ================= ADMIN EDIT MODAL ================= -->
+  <div class="modal-backdrop" id="editModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="editModalTitle">
+      <div class="modal-head">
+        <div>
+          <h2 id="editModalTitle">Edit Player Competition Record</h2>
+          <div class="hint" id="editModalSubtitle">Admin Mode</div>
+        </div>
+        <button type="button" class="modal-close" id="editCloseBtn" title="Close">✕</button>
+      </div>
+
+      <form id="editForm">
+        <input type="hidden" id="e-id">
+
+        <div class="grid2">
+          <div class="field">
+            <label>Player Name</label>
+            <input type="text" id="e-name" required>
+          </div>
+          <div class="field">
+            <label>Season</label>
+            <input type="text" id="e-season" required>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label>Position</label>
+            <select id="e-position">
+              <option value="ST">Striker (ST)</option>
+              <option value="CAM">Attacking Midfielder (CAM)</option>
+              <option value="CM">Central Midfielder (CM)</option>
+              <option value="CDM">Defensive Midfielder (CDM)</option>
+              <option value="CB">Centre-Back (CB)</option>
+              <option value="LB">Left-Back (LB)</option>
+              <option value="RB">Right-Back (RB)</option>
+              <option value="GK">Goalkeeper (GK)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Competition</label>
+            <select id="e-competition"></select>
+          </div>
+        </div>
+
+        <div class="field" id="e-league-wrap" style="display:none;">
+          <label>Final League Position of Club</label>
+          <select id="e-league-position">
+            <option value="0">6th or lower / not ranked 1–5</option>
+            <option value="1">1st — +5 points</option>
+            <option value="2">2nd — +4 points</option>
+            <option value="3">3rd — +3 points</option>
+            <option value="4">4th — +2 points</option>
+            <option value="5">5th — +1 point</option>
+          </select>
+        </div>
+
+        <div class="field" id="e-stage-wrap" style="display:none;">
+          <label>Furthest Stage Reached</label>
+          <select id="e-stage">
+            <option value="none">Did not reach Round of 16</option>
+            <option value="r16">Round of 16 — +1</option>
+            <option value="qf">Quarter-final — +2</option>
+            <option value="sf">Semi-final — +3</option>
+            <option value="final">Final — +4</option>
+            <option value="champion">Winner — +5</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Individual Stats for This Competition</label>
+          <div class="grid-stats" id="e-stats"></div>
+        </div>
+
+        <div class="field">
+          <label>Competition Awards</label>
+          <div class="grid2">
+            <div>
+              <label style="font-weight:400; color:var(--ink-dim);">Golden Boot wins (×3 each)</label>
+              <input type="number" id="e-goldenboot" min="0" step="1" value="0">
+            </div>
+            <div>
+              <label style="font-weight:400; color:var(--ink-dim);">Assist Leader wins (×3 each)</label>
+              <input type="number" id="e-assistleader" min="0" step="1" value="0">
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="grid2">
+            <div>
+              <label>MVP awards in this competition (×2 each)</label>
+              <input type="number" id="e-mvp" min="0" step="1" value="0">
+            </div>
+            <div id="e-finalmvp-wrap" style="display:none;">
+              <label>Final MVP (+5)</label>
+              <select id="e-finalmvp">
+                <option value="0">No</option>
+                <option value="1">Yes — +5</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="preview-score" id="editScorePreview">Competition Score: 0</div>
+        </div>
+
+        <div class="edit-actions">
+          <button type="submit" class="btn">Save Changes</button>
+          <button type="button" class="btn ghost" id="editCancelBtn">Cancel</button>
+        </div>
+        <div class="msg ok" id="editMsg">Changes saved.</div>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<footer><span>★</span><span class="rule2"></span>ONE SYSTEM<span class="rule2"></span>★<span class="rule2"></span>ALL POSITIONS<span class="rule2"></span>★<span class="rule2"></span>TOTAL FAIRNESS<span class="rule2"></span>★</footer>
+
+<script>
+(function(){
+  const POSITION_GROUP = {
+    ST:'attacking', RWF:'attacking', LWF:'attacking', CAM:'attacking',
+    CM:'midfield', CDM:'midfield',
+    CB:'defender', LB:'defender', RB:'defender',
+    GK:'goalkeeper'
+  };
+
+  // Normal SPS individual-stat multipliers.
+  const MULTIPLIERS = {
+    attacking:{goals:3, assists:2, dribbles:1, chancesCreated:1},
+    midfield:{goals:2, assists:3, dribbles:1, chancesCreated:1},
+    defender:{goals:2, assists:3, tackles:1, chancesCreated:1},
+    goalkeeper:{cleanSheets:3, saves:1, penaltySaves:5, goals:2, assists:2}
+  };
+
+  const STAT_LABELS = {
+    goals:'Goals',
+    assists:'Assists',
+    dribbles:'Successful Dribbles',
+    tackles:'Successful Tackles',
+    chancesCreated:'Chances Created',
+    cleanSheets:'Clean Sheets',
+    saves:'Saves',
+    penaltySaves:'Penalty Saves'
+  };
+
+  const LEAGUES = [
+    'Premier League','La Liga','Serie A','Bundesliga','Ligue 1','Other League'
+  ];
+
+  const CLUB_CUPS = [
+    'Champions League','Europa League','Conference League',
+    'FA Cup','Copa del Rey','DFB-Pokal','Coppa Italia',
+    'Coupe de France','Other Domestic Cup'
+  ];
+
+  const INTERNATIONAL = [
+    'World Cup','Euros','Copa América','AFCON','Other International Tournament'
+  ];
+
+  const COMPETITIONS = [
+    ...LEAGUES.map(name=>({name,type:'league'})),
+    ...CLUB_CUPS.map(name=>({name,type:'cup'})),
+    ...INTERNATIONAL.map(name=>({name,type:'cup'}))
+  ];
+
+  const COMP_MAP = Object.fromEntries(COMPETITIONS.map(c=>[c.name,c]));
+  const ALL_COMPETITIONS = COMPETITIONS.map(c=>c.name);
+
+  const STAGES = {
+    none:{label:'Did not reach Round of 16', points:0},
+    r16:{label:'Round of 16', points:1},
+    qf:{label:'Quarter-final', points:2},
+    sf:{label:'Semi-final', points:3},
+    final:{label:'Final', points:4},
+    champion:{label:'Winner', points:5}
+  };
+
+  let players = [];
+  let adminMode = false;
+  let storageReady = false;
+
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => document.querySelectorAll(sel);
+
+  function getCompetition(name){
+    return COMP_MAP[name] || {name, type:'cup'};
+  }
+
+  function calcRecord(p){
+    const group = POSITION_GROUP[p.position] || 'attacking';
+    const mult = MULTIPLIERS[group] || MULTIPLIERS.attacking;
+
+    let statScore = 0;
+    for(const k in mult){
+      statScore += (Number(p.stats?.[k]) || 0) * mult[k];
+    }
+
+    const comp = getCompetition(p.competition);
+    let competitionBonus = 0;
+
+    if(comp.type === 'league'){
+      const pos = Number(p.leaguePosition) || 0;
+      const leaguePoints = {1:5,2:4,3:3,4:2,5:1};
+      competitionBonus = leaguePoints[pos] || 0;
+    }else{
+      const stage = STAGES[p.stage] || STAGES.none;
+      competitionBonus = stage.points;
+    }
+
+    const gb = Number(p.goldenBoot) || 0;
+    const al = Number(p.assistLeader) || 0;
+    const mvp = Number(p.mvp) || 0;
+    const finalMvp = comp.type === 'cup' ? (Number(p.finalMvp) || 0) : 0;
+
+    const awards = (gb * 3) + (al * 3) + (mvp * 2) + (finalMvp * 5);
+
+    return {
+      statScore,
+      competitionBonus,
+      awards,
+      goldenBootWins:gb,
+      assistLeaderWins:al,
+      mvpAwards:mvp,
+      finalMvp,
+      total:statScore + competitionBonus + awards
+    };
+  }
+
+  function normalizeRecord(p){
+    // Keep compatibility with older saved records where possible.
+    if(!p || !p.name) return null;
+
+    const oldCompetition = p.competition || p.list || '';
+    let competition = oldCompetition;
+
+    if(!ALL_COMPETITIONS.includes(competition)){
+      if(LEAGUES.includes(oldCompetition)) competition = oldCompetition;
+      else if(oldCompetition === 'League Player of the Tournament') competition = 'Other League';
+      else if(oldCompetition === 'Ballon d\'Or Race' || oldCompetition === 'Full Career Check') return null;
+      else competition = ALL_COMPETITIONS.includes(oldCompetition) ? oldCompetition : 'Other Domestic Cup';
+    }
+
+    const rec = {
+      id:p.id || ('p_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)),
+      name:String(p.name),
+      position:p.position || 'ST',
+      season:p.season || '2026/27',
+      competition,
+      stats:p.stats || {},
+      goldenBoot:Number(p.goldenBoot)||0,
+      assistLeader:Number(p.assistLeader)||0,
+      mvp:Number(p.mvp)||0,
+      finalMvp:Number(p.finalMvp)||0,
+      leaguePosition:Number(p.leaguePosition)||0,
+      stage:p.stage || 'none'
+    };
+
+    // Old records used stage names with cumulative point values.
+    // We keep the stored stage itself, but new calculations use the new
+    // "furthest stage reached" values above.
+    return rec;
+  }
+
+  function waitForStorage(timeoutMs){
+    return new Promise(resolve=>{
+      const start = Date.now();
+      (function poll(){
+        if(window.storage && typeof window.storage.get === 'function'){
+          resolve(true); return;
+        }
+        if(Date.now()-start > timeoutMs){
+          resolve(false); return;
+        }
+        setTimeout(poll,75);
+      })();
+    });
+  }
+
+  function setStorageStatus(state){
+    const el = $('#storageStatus');
+    if(!el) return;
+
+    if(state==='ok'){
+      el.textContent = 'Ranked automatically by SPS points';
+      el.classList.remove('warn');
+    }else if(state==='unavailable'){
+      el.textContent = 'Auto-save is unavailable — use Export/Import to keep your roster';
+      el.classList.add('warn');
+    }else{
+      el.textContent = 'Could not save just now — try again';
+      el.classList.add('warn');
+    }
+  }
+
+  async function loadPlayers(){
+    storageReady = await waitForStorage(4000);
+
+    if(!storageReady){
+      setStorageStatus('unavailable');
+      players = [];
+      return;
+    }
+
+    try{
+      const res = await window.storage.get('players', false);
+      const raw = res && res.value ? JSON.parse(res.value) : [];
+      players = Array.isArray(raw) ? raw.map(normalizeRecord).filter(Boolean) : [];
+      setStorageStatus('ok');
+    }catch(e){
+      players = [];
+      setStorageStatus('ok');
+    }
+  }
+
+  async function savePlayers(){
+    if(!storageReady){
+      storageReady = await waitForStorage(2000);
+      if(!storageReady){
+        setStorageStatus('unavailable');
+        return false;
+      }
+    }
+
+    try{
+      const result = await window.storage.set('players', JSON.stringify(players), false);
+      if(!result){
+        setStorageStatus('error');
+        return false;
+      }
+      setStorageStatus('ok');
+      return true;
+    }catch(e){
+      console.error('storage save failed',e);
+      setStorageStatus('error');
+      return false;
+    }
+  }
+
+  // ---------- Tabs ----------
+  function setTab(tab){
+    $$('nav.tabs button').forEach(b=>{
+      b.classList.toggle('active',b.dataset.tab===tab);
+    });
+    $$('section.panel').forEach(p=>{
+      p.classList.toggle('active',p.id==='panel-'+tab);
+    });
+
+    if(tab==='rankings') renderRankings();
+  }
+
+  $$('nav.tabs button').forEach(b=>{
+    b.addEventListener('click',()=>setTab(b.dataset.tab));
+  });
+
+  $('#adminSwitch').addEventListener('click',()=>{
+    adminMode=!adminMode;
+    $('#adminSwitch').classList.toggle('on',adminMode);
+    $('#addTabBtn').style.display=adminMode ? 'inline-block' : 'none';
+    if(!adminMode){
+      closeEditModal();
+      setTab('rankings');
+    }
+    renderRankings();
+  });
+
+  // ---------- Ranking list ----------
+  function buildCompetitionOptions(){
+    const select = $('#listSelect');
+    select.innerHTML = '';
+
+    const overall = document.createElement('option');
+    overall.value = '__overall__';
+    overall.textContent = 'SPS Ballon d\'Or — Overall Season Ranking';
+    select.appendChild(overall);
+
+    const groups = [
+      {label:'League Competitions',items:LEAGUES},
+      {label:'Cup Competitions',items:CLUB_CUPS},
+      {label:'International Competitions',items:INTERNATIONAL}
+    ];
+
+    groups.forEach(g=>{
+      const og=document.createElement('optgroup');
+      og.label=g.label;
+
+      g.items.forEach(name=>{
+        const opt=document.createElement('option');
+        opt.value=name;
+        opt.textContent=name;
+        og.appendChild(opt);
+      });
+
+      select.appendChild(og);
+    });
+
+    select.value='__overall__';
+  }
+
+  function buildFormCompetitionOptions(){
+    const select=$('#f-competition');
+    select.innerHTML='';
+
+    const groups=[
+      {label:'League Competitions',items:LEAGUES},
+      {label:'Cup Competitions',items:CLUB_CUPS},
+      {label:'International Competitions',items:INTERNATIONAL}
+    ];
+
+    groups.forEach(g=>{
+      const og=document.createElement('optgroup');
+      og.label=g.label;
+
+      g.items.forEach(name=>{
+        const opt=document.createElement('option');
+        opt.value=name;
+        opt.textContent=name;
+        og.appendChild(opt);
+      });
+
+      select.appendChild(og);
+    });
+  }
+
+  buildCompetitionOptions();
+  buildFormCompetitionOptions();
+
+  // ---------- Add competition form ----------
+  function readFormPlayer(){
+    const position=$('#f-position').value;
+    const group=POSITION_GROUP[position];
+    const mult=MULTIPLIERS[group];
+    const stats={};
+
+    Object.keys(mult).forEach(key=>{
+      const inp=$(`#f-stats input[data-stat="${key}"]`);
+      stats[key]=inp ? (Number(inp.value)||0) : 0;
+    });
+
+    return {
+      position,
+      season:$('#f-season').value.trim() || '2026/27',
+      competition:$('#f-competition').value,
+      leaguePosition:Number($('#f-league-position').value)||0,
+      stage:$('#f-stage').value,
+      goldenBoot:Number($('#f-goldenboot').value)||0,
+      assistLeader:Number($('#f-assistleader').value)||0,
+      mvp:Number($('#f-mvp').value)||0,
+      finalMvp:Number($('#f-finalmvp').value)||0,
+      stats
+    };
+  }
+
+  function updateCompetitionFields(){
+    const comp=getCompetition($('#f-competition').value);
+    const isLeague=comp.type==='league';
+
+    $('#f-league-wrap').style.display=isLeague ? 'block' : 'none';
+    $('#f-stage-wrap').style.display=isLeague ? 'none' : 'block';
+    $('#f-finalmvp-wrap').style.display=isLeague ? 'none' : 'block';
+
+    updatePreview();
+  }
+
+  function updatePreview(){
+    const record=readFormPlayer();
+    const score=calcRecord(record);
+    const comp=getCompetition(record.competition);
+
+    const parts=[
+      `Performance ${score.statScore}`,
+      `${comp.type==='league' ? 'League position' : 'Stage'} +${score.competitionBonus}`,
+      `Awards +${score.awards}`
+    ];
+
+    $('#scorePreview').innerHTML=
+      `Competition Score: <b>${score.total}</b>
+       <span style="font-family:'Manrope',sans-serif;font-size:12px;color:var(--ink-faint);letter-spacing:0;">
+       (${parts.join(' · ')})</span>`;
+  }
+
+  function renderStatFields(){
+    const group=POSITION_GROUP[$('#f-position').value];
+    const mult=MULTIPLIERS[group];
+    const wrap=$('#f-stats');
+
+    wrap.innerHTML='';
+
+    Object.keys(mult).forEach(key=>{
+      const div=document.createElement('div');
+      div.className='field';
+      div.innerHTML=
+        `<label>${STAT_LABELS[key]} (×${mult[key]})</label>
+         <input type="number" min="0" step="1" value="0" data-stat="${key}">`;
+      wrap.appendChild(div);
+    });
+
+    wrap.querySelectorAll('input[data-stat]').forEach(inp=>{
+      inp.addEventListener('input',updatePreview);
+    });
+
+    updatePreview();
+  }
+
+  $('#f-position').addEventListener('change',renderStatFields);
+  $('#f-competition').addEventListener('change',updateCompetitionFields);
+  $('#f-league-position').addEventListener('change',updatePreview);
+  $('#f-stage').addEventListener('change',updatePreview);
+  $('#f-goldenboot').addEventListener('input',updatePreview);
+  $('#f-assistleader').addEventListener('input',updatePreview);
+  $('#f-mvp').addEventListener('input',updatePreview);
+  $('#f-finalmvp').addEventListener('change',updatePreview);
+
+  renderStatFields();
+  updateCompetitionFields();
+
+  $('#playerForm').addEventListener('submit',async e=>{
+    e.preventDefault();
+
+    const name=$('#f-name').value.trim();
+    if(!name) return;
+
+    const record=Object.assign(
+      {
+        id:'p_'+Date.now()+'_'+Math.random().toString(36).slice(2,7),
+        name
+      },
+      readFormPlayer()
+    );
+
+    // Prevent accidentally entering the same player/competition twice.
+    const duplicate=players.some(p=>
+      p.name.toLowerCase()===record.name.toLowerCase() &&
+      p.season===record.season &&
+      p.competition===record.competition
+    );
+
+    if(duplicate){
+      const msg=$('#saveMsg');
+      msg.textContent='This player already has a record for that competition and season.';
+      msg.classList.remove('ok');
+      msg.classList.add('err','show');
+      setTimeout(()=>msg.classList.remove('show'),4000);
+      return;
+    }
+
+    players.push(record);
+    const ok=await savePlayers();
+    const score=calcRecord(record);
+    const msg=$('#saveMsg');
+
+    if(!ok){
+      msg.textContent=
+        `${record.name} was added for this session, but auto-save failed. Export the roster to keep it.`;
+      msg.classList.remove('ok');
+      msg.classList.add('err','show');
+    }else{
+      msg.textContent=
+        `${record.name} — ${record.competition}: ${score.total} SPS points added.`;
+      msg.classList.remove('err');
+      msg.classList.add('ok','show');
+    }
+
+    setTimeout(()=>msg.classList.remove('show'),5000);
+
+    $('#playerForm').reset();
+    $('#f-season').value=record.season;
+    $('#f-competition').value=record.competition;
+    renderStatFields();
+    updateCompetitionFields();
+
+    setTab('rankings');
+    renderRankings(record.id);
+  });
+
+  // ---------- Overall SPS Ballon d'Or ----------
+  function getOverallRanking(){
+    const map=new Map();
+
+    players.forEach(p=>{
+      const key=`${p.season}||${p.name.toLowerCase()}||${p.position}`;
+
+      if(!map.has(key)){
+        map.set(key,{
+          name:p.name,
+          position:p.position,
+          season:p.season,
+          total:0,
+          competitions:[]
+        });
+      }
+
+      const entry=map.get(key);
+      const score=calcRecord(p);
+      entry.total+=score.total;
+      entry.competitions.push({
+        name:p.competition,
+        type:getCompetition(p.competition).type,
+        score:score.total
+      });
+    });
+
+    return [...map.values()]
+      .sort((a,b)=>b.total-a.total || a.name.localeCompare(b.name))
+      .slice(0,20);
+  }
+
+  // ---------- Competition ranking ----------
+  function getCompetitionRanking(list){
+    return players
+      .filter(p=>p.competition===list)
+      .map(p=>({p,score:calcRecord(p)}))
+      .sort((a,b)=>b.score.total-a.score.total || a.p.name.localeCompare(b.p.name))
+      .slice(0,20);
+  }
+
+  function renderRankings(highlightId){
+    const list=$('#listSelect').value;
+    const wrap=$('#rankList');
+
+    if(list==='__overall__'){
+      const entries=getOverallRanking();
+
+      if(entries.length===0){
+        wrap.innerHTML=
+          `<div class="empty">No season records yet. Switch on Admin Mode to add competition records.</div>`;
+        return;
+      }
+
+      wrap.innerHTML=entries.map((e,i)=>{
+        const compText=e.competitions
+          .sort((a,b)=>b.score-a.score)
+          .map(c=>`${escapeHtml(c.name)}: <b>${c.score}</b>`)
+          .join(' · ');
+
+        return `
+          <div class="overall-row">
+            <div class="rank-num">${i+1}</div>
+            <div>
+              <div class="overall-name">${escapeHtml(e.name)}</div>
+              <span class="pos pos-${e.position}">${e.position}</span>
+              <div class="competition-meta">${escapeHtml(e.season)} · ${e.competitions.length} competition(s)</div>
+            </div>
+            <div class="overall-score">${e.total}</div>
+            <div class="overall-breakdown">
+              <span>Competition totals: ${compText}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      return;
+    }
+
+    const entries=getCompetitionRanking(list);
+
+    if(entries.length===0){
+      wrap.innerHTML=
+        `<div class="empty">No players ranked yet in ${escapeHtml(list)}.</div>`;
+      return;
+    }
+
+    wrap.innerHTML=entries.map(({p,score},i)=>{
+      const comp=getCompetition(p.competition);
+      const stageLabel=comp.type==='cup'
+        ? (STAGES[p.stage]||STAGES.none).label
+        : `Club position ${Number(p.leaguePosition)||'6+'}`;
+
+      return `
+        <div class="rank-row${p.id===highlightId ? ' new-entry' : ''}" data-id="${p.id}">
+          <div class="rank-num">${i+1}</div>
+          <div>
+            <div class="rank-name">${escapeHtml(p.name)}</div>
+            <span class="pos pos-${p.position}">${p.position}</span>
+            <div class="competition-meta">${escapeHtml(p.season)} · ${comp.type}</div>
+          </div>
+          <div class="rank-score">${score.total}</div>
+          ${adminMode
+            ? `<div class="rank-actions">
+                 <button class="rank-edit" data-edit="${p.id}" title="Edit player stats">Edit</button>
+                 <button class="rank-del" data-del="${p.id}" title="Remove">✕</button>
+               </div>`
+            : '<div></div>'}
+        </div>
+
+        <div class="breakdown">
+          <span>Performance: <b>${score.statScore}</b></span>
+          <span>${comp.type==='league' ? 'League position' : 'Stage'}: <b>+${score.competitionBonus}</b></span>
+          <span>Awards: <b>+${score.awards}</b></span>
+          <span>Total: <b>${score.total}</b></span>
+          ${score.mvpAwards ? `<span>MVP ×${score.mvpAwards}</span>` : ''}
+          ${score.finalMvp ? `<span>Final MVP +5</span>` : ''}
+          ${score.goldenBootWins ? `<span>GB ×${score.goldenBootWins}</span>` : ''}
+          ${score.assistLeaderWins ? `<span>AL ×${score.assistLeaderWins}</span>` : ''}
+        </div>
+      `;
+    }).join('');
+
+    wrap.querySelectorAll('[data-edit]').forEach(btn=>{
+      btn.addEventListener('click',e=>{
+        e.stopPropagation();
+        openEditModal(btn.dataset.edit);
+      });
+    });
+
+    wrap.querySelectorAll('[data-del]').forEach(btn=>{
+      btn.addEventListener('click',async e=>{
+        e.stopPropagation();
+        const id=btn.dataset.del;
+
+        if(!confirm('Remove this competition record?')) return;
+
+        players=players.filter(p=>p.id!==id);
+        await savePlayers();
+        renderRankings();
+      });
+    });
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g,c=>({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    }[c]));
+  }
+
+  $('#listSelect').addEventListener('change',()=>renderRankings());
+
+
+  // ---------- Admin edit player record ----------
+  function buildEditCompetitionOptions(){
+    const select=$('#e-competition');
+    select.innerHTML='';
+
+    const groups=[
+      {label:'League Competitions',items:LEAGUES},
+      {label:'Cup Competitions',items:CLUB_CUPS},
+      {label:'International Competitions',items:INTERNATIONAL}
+    ];
+
+    groups.forEach(g=>{
+      const og=document.createElement('optgroup');
+      og.label=g.label;
+
+      g.items.forEach(name=>{
+        const opt=document.createElement('option');
+        opt.value=name;
+        opt.textContent=name;
+        og.appendChild(opt);
+      });
+
+      select.appendChild(og);
+    });
+  }
+
+  function readEditPlayer(){
+    const position=$('#e-position').value;
+    const group=POSITION_GROUP[position];
+    const mult=MULTIPLIERS[group];
+    const stats={};
+
+    Object.keys(mult).forEach(key=>{
+      const inp=$(`#e-stats input[data-stat="${key}"]`);
+      stats[key]=inp ? (Number(inp.value)||0) : 0;
+    });
+
+    return {
+      name:$('#e-name').value.trim(),
+      season:$('#e-season').value.trim() || '2026/27',
+      position,
+      competition:$('#e-competition').value,
+      leaguePosition:Number($('#e-league-position').value)||0,
+      stage:$('#e-stage').value,
+      goldenBoot:Number($('#e-goldenboot').value)||0,
+      assistLeader:Number($('#e-assistleader').value)||0,
+      mvp:Number($('#e-mvp').value)||0,
+      finalMvp:Number($('#e-finalmvp').value)||0,
+      stats
+    };
+  }
+
+  function renderEditStatFields(existingStats){
+    const group=POSITION_GROUP[$('#e-position').value];
+    const mult=MULTIPLIERS[group];
+    const wrap=$('#e-stats');
+
+    wrap.innerHTML='';
+
+    Object.keys(mult).forEach(key=>{
+      const div=document.createElement('div');
+      div.className='field';
+      div.innerHTML=
+        `<label>${STAT_LABELS[key]} (×${mult[key]})</label>
+         <input type="number" min="0" step="1" value="${Number(existingStats?.[key])||0}" data-stat="${key}">`;
+      wrap.appendChild(div);
+    });
+
+    wrap.querySelectorAll('input[data-stat]').forEach(inp=>{
+      inp.addEventListener('input',updateEditPreview);
+    });
+
+    updateEditPreview();
+  }
+
+  function updateEditFields(){
+    const comp=getCompetition($('#e-competition').value);
+    const isLeague=comp.type==='league';
+
+    $('#e-league-wrap').style.display=isLeague ? 'block' : 'none';
+    $('#e-stage-wrap').style.display=isLeague ? 'none' : 'block';
+    $('#e-finalmvp-wrap').style.display=isLeague ? 'none' : 'block';
+
+    updateEditPreview();
+  }
+
+  function updateEditPreview(){
+    const record=readEditPlayer();
+    const score=calcRecord(record);
+    const comp=getCompetition(record.competition);
+
+    const parts=[
+      `Performance ${score.statScore}`,
+      `${comp.type==='league' ? 'League position' : 'Stage'} +${score.competitionBonus}`,
+      `Awards +${score.awards}`
+    ];
+
+    $('#editScorePreview').innerHTML=
+      `Competition Score: <b>${score.total}</b>
+       <span style="font-family:'Manrope',sans-serif;font-size:12px;color:var(--ink-faint);letter-spacing:0;">
+       (${parts.join(' · ')})</span>`;
+  }
+
+  function closeEditModal(){
+    $('#editModal').classList.remove('show');
+    $('#editModal').setAttribute('aria-hidden','true');
+    $('#editMsg').classList.remove('show');
+  }
+
+  function openEditModal(id){
+    if(!adminMode) return;
+
+    const p=players.find(x=>x.id===id);
+    if(!p) return;
+
+    $('#e-id').value=p.id;
+    $('#e-name').value=p.name;
+    $('#e-season').value=p.season;
+    $('#e-position').value=p.position;
+    $('#e-competition').value=p.competition;
+    $('#e-league-position').value=String(Number(p.leaguePosition)||0);
+    $('#e-stage').value=p.stage || 'none';
+    $('#e-goldenboot').value=Number(p.goldenBoot)||0;
+    $('#e-assistleader').value=Number(p.assistLeader)||0;
+    $('#e-mvp').value=Number(p.mvp)||0;
+    $('#e-finalmvp').value=Number(p.finalMvp)||0;
+
+    renderEditStatFields(p.stats || {});
+    updateEditFields();
+
+    $('#editModalTitle').textContent=`Edit ${p.name}`;
+    $('#editModalSubtitle').textContent=`${p.season} · ${p.competition} · Admin Mode`;
+    $('#editModal').classList.add('show');
+    $('#editModal').setAttribute('aria-hidden','false');
+  }
+
+  buildEditCompetitionOptions();
+
+  $('#e-position').addEventListener('change',()=>renderEditStatFields({}));
+  $('#e-competition').addEventListener('change',updateEditFields);
+  $('#e-league-position').addEventListener('change',updateEditPreview);
+  $('#e-stage').addEventListener('change',updateEditPreview);
+  $('#e-goldenboot').addEventListener('input',updateEditPreview);
+  $('#e-assistleader').addEventListener('input',updateEditPreview);
+  $('#e-mvp').addEventListener('input',updateEditPreview);
+  $('#e-finalmvp').addEventListener('change',updateEditPreview);
+
+  $('#editCloseBtn').addEventListener('click',closeEditModal);
+  $('#editCancelBtn').addEventListener('click',closeEditModal);
+
+  $('#editModal').addEventListener('click',e=>{
+    if(e.target===e.currentTarget) closeEditModal();
+  });
+
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape' && $('#editModal').classList.contains('show')){
+      closeEditModal();
+    }
+  });
+
+  $('#editForm').addEventListener('submit',async e=>{
+    e.preventDefault();
+
+    if(!adminMode){
+      closeEditModal();
+      return;
+    }
+
+    const id=$('#e-id').value;
+    const index=players.findIndex(p=>p.id===id);
+    if(index<0) return;
+
+    const record=readEditPlayer();
+    if(!record.name) return;
+
+    // Prevent duplicate player/season/competition records, except the record being edited.
+    const duplicate=players.some(p=>
+      p.id!==id &&
+      p.name.toLowerCase()===record.name.toLowerCase() &&
+      p.season===record.season &&
+      p.competition===record.competition
+    );
+
+    if(duplicate){
+      const msg=$('#editMsg');
+      msg.textContent='Another record already exists for this player, season and competition.';
+      msg.classList.remove('ok');
+      msg.classList.add('err','show');
+      setTimeout(()=>msg.classList.remove('show'),4000);
+      return;
+    }
+
+    players[index]=Object.assign({id},record);
+    const ok=await savePlayers();
+
+    const msg=$('#editMsg');
+    if(!ok){
+      msg.textContent='Changes are active for this session, but auto-save failed. Export the roster to keep them.';
+      msg.classList.remove('ok');
+      msg.classList.add('err','show');
+    }else{
+      msg.textContent=`${record.name} — ${record.competition} updated successfully.`;
+      msg.classList.remove('err');
+      msg.classList.add('ok','show');
+    }
+
+    renderRankings();
+    setTimeout(()=>{
+      msg.classList.remove('show');
+      closeEditModal();
+    },1200);
+  });
+
+  // ---------- Export / Import ----------
+  function showIoMsg(text,isErr){
+    const el=$('#ioMsg');
+    el.textContent=text;
+    el.classList.toggle('err',!!isErr);
+    el.classList.toggle('ok',!isErr);
+    el.classList.add('show');
+    setTimeout(()=>el.classList.remove('show'),5000);
+  }
+
+  $('#exportBtn').addEventListener('click',()=>{
+    if(players.length===0){
+      showIoMsg('No competition records to export yet.',true);
+      return;
+    }
+
+    const blob=new Blob([JSON.stringify(players,null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;
+    a.download='sps-season-records.json';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+
+    showIoMsg(
+      `Exported ${players.length} competition record(s). Keep this file so the season can be restored.`
+    );
+  });
+
+  $('#importBtn').addEventListener('click',()=>$('#importFile').click());
+
+  $('#importFile').addEventListener('change',e=>{
+    const file=e.target.files[0];
+    if(!file) return;
+
+    const reader=new FileReader();
+
+    reader.onload=async()=>{
+      try{
+        const incoming=JSON.parse(reader.result);
+        if(!Array.isArray(incoming)) throw new Error('not an array');
+
+        const existingKeys=new Set(
+          players.map(p=>`${p.name.toLowerCase()}||${p.season}||${p.competition}`)
+        );
+
+        let added=0;
+
+        incoming.forEach(raw=>{
+          const p=normalizeRecord(raw);
+          if(!p) return;
+
+          const key=`${p.name.toLowerCase()}||${p.season}||${p.competition}`;
+
+          if(ALL_COMPETITIONS.includes(p.competition) && !existingKeys.has(key)){
+            players.push(p);
+            existingKeys.add(key);
+            added++;
+          }
+        });
+
+        await savePlayers();
+        renderRankings();
+        showIoMsg(`Imported ${added} new competition record(s) from ${file.name}.`);
+      }catch(err){
+        console.error(err);
+        showIoMsg(
+          'Could not read that file. Use an SPS roster exported from this app.',
+          true
+        );
+      }
+
+      $('#importFile').value='';
+    };
+
+    reader.readAsText(file);
+  });
+
+  // ---------- Init ----------
+  (async function init(){
+    await loadPlayers();
+    renderRankings();
+  })();
+
+})();
+</script>
+</body>
+</html>
