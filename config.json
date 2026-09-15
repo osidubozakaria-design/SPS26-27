@@ -1,0 +1,17 @@
+{
+  "season": 2026,
+  "sps_season_label": "2026/27",
+  "competitions": {
+    "Premier League": {"league_id": 39, "kind": "league"},
+    "La Liga": {"league_id": 140, "kind": "league"},
+    "Bundesliga": {"league_id": 78, "kind": "league"},
+    "Serie A": {"league_id": 135, "kind": "league"},
+    "Ligue 1": {"league_id": 61, "kind": "league"},
+    "Champions League": {"league_id": 2, "kind": "cup"}
+  },
+  "sync": {
+    "request_delay_seconds": 6.2,
+    "keep_manual_awards": true,
+    "stop_when_all_roster_names_match": true
+  }
+}
