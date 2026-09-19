@@ -1,123 +1,1938 @@
 [
-  { "id": "p_pl_01", "name": "Bruno Fernandes", "position": "CAM", "season": "2026/27", "competition": "Premier League", "leaguePosition": 0, "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 3, "assists": 1, "dribbles": 2, "chancesCreated": 11 } },
-  { "id": "p_pl_02", "name": "Rayan Cherki", "position": "CAM", "season": "2026/27", "competition": "Premier League", "leaguePosition": 2, "goldenBoot": 0, "assistLeader": 0, "mvp": 1, "stats": { "goals": 2, "assists": 2, "dribbles": 5, "chancesCreated": 10 } },
-  { "id": "p_pl_03", "name": "João Pedro", "position": "ST", "season": "2026/27", "competition": "Premier League", "leaguePosition": 5, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 3, "assists": 2, "dribbles": 4, "chancesCreated": 3 } },
-  { "id": "p_pl_04", "name": "Morgan Rogers", "position": "CAM", "season": "2026/27", "competition": "Premier League", "leaguePosition": 5, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 2, "dribbles": 6, "chancesCreated": 10 } },
-  { "id": "p_pl_05", "name": "Anan Khalaili", "position": "RB", "season": "2026/27", "competition": "Premier League", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 0, "assists": 1, "tackles": 17, "chancesCreated": 4 } },
-  { "id": "p_pl_06", "name": "Konstantinos Tzolakis", "position": "GK", "season": "2026/27", "competition": "Premier League", "leaguePosition": 3, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "cleanSheets": 3, "saves": 14, "penaltySaves": 0, "goals": 0, "assists": 0 } },
-  { "id": "p_pl_07", "name": "Cole Palmer", "position": "RWF", "season": "2026/27", "competition": "Premier League", "leaguePosition": 5, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 1, "dribbles": 4, "chancesCreated": 8 } },
-  { "id": "p_pl_08", "name": "Erling Haaland", "position": "ST", "season": "2026/27", "competition": "Premier League", "leaguePosition": 2, "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 3, "assists": 0, "dribbles": 3, "chancesCreated": 4 } },
-  { "id": "p_pl_09", "name": "Cody Gakpo", "position": "LWF", "season": "2026/27", "competition": "Premier League", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 1, "mvp": 0, "stats": { "goals": 1, "assists": 3, "dribbles": 3, "chancesCreated": 5 } },
-  { "id": "p_pl_10", "name": "Mathys Tel", "position": "LWF", "season": "2026/27", "competition": "Premier League", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 1, "dribbles": 10, "chancesCreated": 4 } },
-  { "id": "p_pl_11", "name": "Vitaly Janelt", "position": "CDM", "season": "2026/27", "competition": "Premier League", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 1, "chancesCreated": 5 } },
-  { "id": "p_pl_12", "name": "Martin Ødegaard", "position": "CAM", "season": "2026/27", "competition": "Premier League", "leaguePosition": 1, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 1, "dribbles": 3, "chancesCreated": 12 } },
-  { "id": "p_pl_13", "name": "Alexander Isak", "position": "ST", "season": "2026/27", "competition": "Premier League", "leaguePosition": 0, "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 3, "assists": 0, "dribbles": 2, "chancesCreated": 3 } },
-  { "id": "p_pl_14", "name": "David Raya", "position": "GK", "season": "2026/27", "competition": "Premier League", "leaguePosition": 1, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "cleanSheets": 2, "saves": 10, "penaltySaves": 0, "goals": 0, "assists": 0 } },
-  { "id": "p_pl_15", "name": "Rúben Dias", "position": "CB", "season": "2026/27", "competition": "Premier League", "leaguePosition": 2, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 0, "assists": 0, "tackles": 8, "chancesCreated": 3 } },
-  { "id": "p_pl_16", "name": "Lukas Hornicek", "position": "GK", "season": "2026/27", "competition": "Premier League", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "cleanSheets": 1, "saves": 13, "penaltySaves": 0, "goals": 0, "assists": 0 } },
-  { "id": "p_pl_17", "name": "Khell Scherpen", "position": "GK", "season": "2026/27", "competition": "Premier League", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "cleanSheets": 0, "saves": 13, "penaltySaves": 0, "goals": 0, "assists": 0 } },
-  { "id": "p_pl_18", "name": "Bukayo Saka", "position": "RWF", "season": "2026/27", "competition": "Premier League", "leaguePosition": 1, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 1, "dribbles": 4, "chancesCreated": 7 } },
-  { "id": "p_pl_19", "name": "Kai Havertz", "position": "ST", "season": "2026/27", "competition": "Premier League", "leaguePosition": 1, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 2, "chancesCreated": 4 } },
-  { "id": "p_pl_20", "name": "Bryan Mbeumo", "position": "RWF", "season": "2026/27", "competition": "Premier League", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 3, "chancesCreated": 3 } },
-
-  { "id": "p_laliga_01", "name": "Raphinha", "position": "LWF", "season": "2026/27", "competition": "La Liga", "leaguePosition": 1, "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 6, "assists": 2, "dribbles": 8, "chancesCreated": 12 } },
-  { "id": "p_laliga_02", "name": "Lamine Yamal", "position": "RWF", "season": "2026/27", "competition": "La Liga", "leaguePosition": 1, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 4, "assists": 3, "dribbles": 14, "chancesCreated": 11 } },
-  { "id": "p_laliga_03", "name": "Kylian Mbappé", "position": "ST", "season": "2026/27", "competition": "La Liga", "leaguePosition": 2, "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 6, "assists": 1, "dribbles": 9, "chancesCreated": 5 } },
-  { "id": "p_laliga_04", "name": "Fermín López", "position": "CAM", "season": "2026/27", "competition": "La Liga", "leaguePosition": 1, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 4, "assists": 2, "dribbles": 5, "chancesCreated": 8 } },
-  { "id": "p_laliga_05", "name": "Sergio Camello", "position": "ST", "season": "2026/27", "competition": "La Liga", "leaguePosition": 4, "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 6, "assists": 0, "dribbles": 3, "chancesCreated": 4 } },
-  { "id": "p_laliga_06", "name": "Roberto Fernández", "position": "ST", "season": "2026/27", "competition": "La Liga", "leaguePosition": 3, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 5, "assists": 1, "dribbles": 3, "chancesCreated": 4 } },
-  { "id": "p_laliga_07", "name": "Yassir Zabiri", "position": "ST", "season": "2026/27", "competition": "La Liga", "leaguePosition": 5, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 5, "assists": 0, "dribbles": 4, "chancesCreated": 2 } },
-  { "id": "p_laliga_08", "name": "Pierre-Emerick Aubameyang", "position": "ST", "season": "2026/27", "competition": "La Liga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 4, "assists": 1, "dribbles": 2, "chancesCreated": 3 } },
-  { "id": "p_laliga_09", "name": "Jude Bellingham", "position": "CAM", "season": "2026/27", "competition": "La Liga", "leaguePosition": 2, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 2, "dribbles": 6, "chancesCreated": 9 } },
-  { "id": "p_laliga_10", "name": "Vinícius Júnior", "position": "LWF", "season": "2026/27", "competition": "La Liga", "leaguePosition": 2, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 3, "dribbles": 12, "chancesCreated": 8 } },
-  { "id": "p_laliga_11", "name": "Álex Baena", "position": "LWF", "season": "2026/27", "competition": "La Liga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 3, "assists": 1, "dribbles": 4, "chancesCreated": 10 } },
-  { "id": "p_laliga_12", "name": "Lucas Boyé", "position": "ST", "season": "2026/27", "competition": "La Liga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 4, "assists": 0, "dribbles": 3, "chancesCreated": 2 } },
-  { "id": "p_laliga_13", "name": "Ante Budimir", "position": "ST", "season": "2026/27", "competition": "La Liga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 4, "assists": 0, "dribbles": 1, "chancesCreated": 2 } },
-  { "id": "p_laliga_14", "name": "Arda Güler", "position": "RWF", "season": "2026/27", "competition": "La Liga", "leaguePosition": 2, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 2, "dribbles": 4, "chancesCreated": 7 } },
-  { "id": "p_laliga_15", "name": "Nicolas Pépé", "position": "RWF", "season": "2026/27", "competition": "La Liga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 1, "dribbles": 5, "chancesCreated": 4 } },
-  { "id": "p_laliga_16", "name": "Robert Navarro", "position": "LWF", "season": "2026/27", "competition": "La Liga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 1, "dribbles": 4, "chancesCreated": 5 } },
-  { "id": "p_laliga_17", "name": "Rodrigo Riquelme", "position": "LWF", "season": "2026/27", "competition": "La Liga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 1, "dribbles": 3, "chancesCreated": 6 } },
-  { "id": "p_laliga_18", "name": "M. Díaz", "position": "ST", "season": "2026/27", "competition": "La Liga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 1, "dribbles": 2, "chancesCreated": 3 } },
-  { "id": "p_laliga_19", "name": "Lee Kang-In", "position": "RWF", "season": "2026/27", "competition": "La Liga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 2, "dribbles": 5, "chancesCreated": 6 } },
-  { "id": "p_laliga_20", "name": "Luismi Cruz", "position": "RWF", "season": "2026/27", "competition": "La Liga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 2, "dribbles": 4, "chancesCreated": 5 } },
-
-  { "id": "p_bl_01", "name": "Yuito Suzuki", "position": "ST", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 2, "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 3, "assists": 0, "dribbles": 2, "chancesCreated": 3 } },
-  { "id": "p_bl_02", "name": "Younes Ebnoutalib", "position": "ST", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 2, "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 3, "assists": 0, "dribbles": 1, "chancesCreated": 2 } },
-  { "id": "p_bl_03", "name": "Ismael Saibari", "position": "CAM", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 5, "goldenBoot": 0, "assistLeader": 1, "mvp": 0, "stats": { "goals": 0, "assists": 3, "dribbles": 4, "chancesCreated": 8 } },
-  { "id": "p_bl_04", "name": "Matthias Ginter", "position": "CB", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 1, "goldenBoot": 0, "assistLeader": 1, "mvp": 0, "stats": { "goals": 0, "assists": 3, "tackles": 7, "chancesCreated": 3 } },
-  { "id": "p_bl_05", "name": "Joshua Kimmich", "position": "CDM", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 5, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 0, "assists": 2, "dribbles": 3, "chancesCreated": 11 } },
-  { "id": "p_bl_06", "name": "Patrik Schick", "position": "ST", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 2, "chancesCreated": 4 } },
-  { "id": "p_bl_07", "name": "Josha Vagnoman", "position": "RB", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "tackles": 11, "chancesCreated": 4 } },
-  { "id": "p_bl_08", "name": "Serhou Guirassy", "position": "ST", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 3, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 1, "dribbles": 3, "chancesCreated": 3 } },
-  { "id": "p_bl_09", "name": "Ridle Baku", "position": "RB", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 4, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "tackles": 9, "chancesCreated": 3 } },
-  { "id": "p_bl_10", "name": "Hugo Bolin", "position": "CAM", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 5, "chancesCreated": 2 } },
-  { "id": "p_bl_11", "name": "Phillip Tietz", "position": "ST", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 2, "chancesCreated": 3 } },
-  { "id": "p_bl_12", "name": "Thijs Dallinga", "position": "ST", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 1, "chancesCreated": 2 } },
-  { "id": "p_bl_13", "name": "Maurice Krattenmacher", "position": "CAM", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 4, "chancesCreated": 4 } },
-  { "id": "p_bl_14", "name": "Loris Karius", "position": "GK", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "cleanSheets": 1, "saves": 22, "penaltySaves": 0, "goals": 0, "assists": 0 } },
-  { "id": "p_bl_15", "name": "Moritz Nicolas", "position": "GK", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "cleanSheets": 1, "saves": 19, "penaltySaves": 0, "goals": 0, "assists": 0 } },
-  { "id": "p_bl_16", "name": "Finn Dahmen", "position": "GK", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 3, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "cleanSheets": 1, "saves": 17, "penaltySaves": 0, "goals": 0, "assists": 0 } },
-  { "id": "p_bl_17", "name": "Miguel Gutiérrez", "position": "LB", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 3, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 0, "assists": 2, "tackles": 8, "chancesCreated": 8 } },
-  { "id": "p_bl_18", "name": "Nikola Katić", "position": "CB", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 3, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 0, "assists": 0, "tackles": 12, "chancesCreated": 4 } },
-  { "id": "p_bl_19", "name": "Adam Daghim", "position": "RWF", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 1, "dribbles": 5, "chancesCreated": 2 } },
-  { "id": "p_bl_20", "name": "Sheraldo Becker", "position": "RWF", "season": "2026/27", "competition": "Bundesliga", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 2, "dribbles": 3, "chancesCreated": 1 } },
-
-  { "id": "p_sa_01", "name": "Donyell Malen", "position": "RWF", "season": "2026/27", "competition": "Serie A", "leaguePosition": 2, "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 5, "assists": 0, "dribbles": 6, "chancesCreated": 2 } },
-  { "id": "p_sa_02", "name": "Paulo Dybala", "position": "CAM", "season": "2026/27", "competition": "Serie A", "leaguePosition": 2, "goldenBoot": 0, "assistLeader": 1, "mvp": 0, "stats": { "goals": 0, "assists": 4, "dribbles": 5, "chancesCreated": 7 } },
-  { "id": "p_sa_03", "name": "Antonio Raimondo", "position": "ST", "season": "2026/27", "competition": "Serie A", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 4, "assists": 0, "dribbles": 2, "chancesCreated": 0 } },
-  { "id": "p_sa_04", "name": "Davide Frattesi", "position": "CM", "season": "2026/27", "competition": "Serie A", "leaguePosition": 1, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 3, "assists": 0, "dribbles": 2, "chancesCreated": 2 } },
-  { "id": "p_sa_05", "name": "Matías Soulé", "position": "RWF", "season": "2026/27", "competition": "Serie A", "leaguePosition": 2, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 1, "dribbles": 6, "chancesCreated": 6 } },
-  { "id": "p_sa_06", "name": "Martin Baturina", "position": "CAM", "season": "2026/27", "competition": "Serie A", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 1, "dribbles": 5, "chancesCreated": 6 } },
-  { "id": "p_sa_07", "name": "Assane Diao", "position": "LWF", "season": "2026/27", "competition": "Serie A", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 1, "dribbles": 4, "chancesCreated": 4 } },
-  { "id": "p_sa_08", "name": "Hassane Kamara", "position": "LB", "season": "2026/27", "competition": "Serie A", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 1, "tackles": 8, "chancesCreated": 3 } },
-  { "id": "p_sa_09", "name": "Lautaro Martínez", "position": "ST", "season": "2026/27", "competition": "Serie A", "leaguePosition": 3, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 3, "chancesCreated": 2 } },
-  { "id": "p_sa_10", "name": "Hakan Çalhanoğlu", "position": "CDM", "season": "2026/27", "competition": "Serie A", "leaguePosition": 3, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 1, "chancesCreated": 6 } },
-  { "id": "p_sa_11", "name": "Anastasios Douvikas", "position": "ST", "season": "2026/27", "competition": "Serie A", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 2, "chancesCreated": 2 } },
-  { "id": "p_sa_12", "name": "Rasmus Højlund", "position": "ST", "season": "2026/27", "competition": "Serie A", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 2, "chancesCreated": 1 } },
-  { "id": "p_sa_13", "name": "Ché Adams", "position": "ST", "season": "2026/27", "competition": "Serie A", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 2, "chancesCreated": 0 } },
-  { "id": "p_sa_14", "name": "Gustavo Varela", "position": "ST", "season": "2026/27", "competition": "Serie A", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 1, "chancesCreated": 0 } },
-  { "id": "p_sa_15", "name": "Alphadjo Cissè", "position": "CAM", "season": "2026/27", "competition": "Serie A", "leaguePosition": 5, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 3, "chancesCreated": 3 } },
-  { "id": "p_sa_16", "name": "Ricardo Mangas", "position": "LB", "season": "2026/27", "competition": "Serie A", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 0, "assists": 2, "tackles": 9, "chancesCreated": 3 } },
-  { "id": "p_sa_17", "name": "Samuel Chukwueze", "position": "RWF", "season": "2026/27", "competition": "Serie A", "leaguePosition": 5, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 0, "assists": 2, "dribbles": 4, "chancesCreated": 5 } },
-  { "id": "p_sa_18", "name": "Kevin De Bruyne", "position": "CAM", "season": "2026/27", "competition": "Serie A", "leaguePosition": 0, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 1, "dribbles": 3, "chancesCreated": 7 } },
-  { "id": "p_sa_19", "name": "Federico Dimarco", "position": "LB", "season": "2026/27", "competition": "Serie A", "leaguePosition": 3, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 0, "assists": 1, "tackles": 8, "chancesCreated": 6 } },
-  { "id": "p_sa_20", "name": "Mattia Zaccagni", "position": "LWF", "season": "2026/27", "competition": "Serie A", "leaguePosition": 1, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 1, "dribbles": 4, "chancesCreated": 4 } },
-
-  { "id": "p_l1_01", "name": "Amine Gouiri", "position": "ST", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 11, "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 4, "assists": 0, "dribbles": 6, "chancesCreated": 2 } },
-  { "id": "p_l1_02", "name": "Kamory Doumbia", "position": "CAM", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 7, "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 4, "assists": 0, "dribbles": 7, "chancesCreated": 5 } },
-  { "id": "p_l1_03", "name": "Lassine Sinayoko", "position": "RWF", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 4, "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 4, "assists": 0, "dribbles": 4, "chancesCreated": 3 } },
-  { "id": "p_l1_04", "name": "Esteban Lepaul", "position": "ST", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 1, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 3, "assists": 1, "dribbles": 4, "chancesCreated": 5 } },
-  { "id": "p_l1_05", "name": "Florian Thauvin", "position": "RWF", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 10, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 3, "assists": 0, "dribbles": 8, "chancesCreated": 6 } },
-  { "id": "p_l1_06", "name": "Ferran Torres", "position": "LWF", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 14, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 3, "chancesCreated": 3 } },
-  { "id": "p_l1_07", "name": "Ousmane Dembélé", "position": "RWF", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 14, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 1, "dribbles": 10, "chancesCreated": 11 } },
-  { "id": "p_l1_08", "name": "Paris Brunner", "position": "ST", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 2, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 3, "assists": 0, "dribbles": 3, "chancesCreated": 2 } },
-  { "id": "p_l1_09", "name": "Loïs Openda", "position": "ST", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 3, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 1, "dribbles": 6, "chancesCreated": 5 } },
-  { "id": "p_l1_10", "name": "Olivier Giroud", "position": "ST", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 5, "goldenBoot": 0, "assistLeader": 1, "mvp": 0, "stats": { "goals": 1, "assists": 2, "dribbles": 1, "chancesCreated": 4 } },
-  { "id": "p_l1_11", "name": "Gessime Yassine", "position": "RWF", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 6, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 5, "chancesCreated": 4 } },
-  { "id": "p_l1_12", "name": "Marquinhos", "position": "CB", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 14, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "tackles": 12, "chancesCreated": 1 } },
-  { "id": "p_l1_13", "name": "Sam Amo-Ameyaw", "position": "RWF", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 6, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 6, "chancesCreated": 3 } },
-  { "id": "p_l1_14", "name": "Joao Neves", "position": "CM", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 14, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 0, "assists": 2, "tackles": 12, "chancesCreated": 6 } },
-  { "id": "p_l1_15", "name": "Achraf Hakimi", "position": "RB", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 14, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 0, "assists": 2, "tackles": 9, "chancesCreated": 8 } },
-  { "id": "p_l1_16", "name": "Maghnes Akliouche", "position": "CAM", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 2, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 1, "dribbles": 6, "chancesCreated": 8 } },
-  { "id": "p_l1_17", "name": "Lee Kang-in", "position": "RWF", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 14, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 1, "dribbles": 5, "chancesCreated": 9 } },
-  { "id": "p_l1_18", "name": "Brice Samba", "position": "GK", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 1, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "cleanSheets": 2, "saves": 11, "penaltySaves": 0, "goals": 0, "assists": 0 } },
-  { "id": "p_l1_19", "name": "Lukáš Hrádecký", "position": "GK", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 2, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "cleanSheets": 2, "saves": 10, "penaltySaves": 0, "goals": 0, "assists": 0 } },
-  { "id": "p_l1_20", "name": "Kevin Trapp", "position": "GK", "season": "2026/27", "competition": "Ligue 1", "leaguePosition": 4, "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "cleanSheets": 2, "saves": 12, "penaltySaves": 0, "goals": 0, "assists": 0 } },
-
-  { "id": "p_ucl_01", "name": "Ousmane Dembélé", "position": "RWF", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 1, "mvp": 0, "stats": { "goals": 2, "assists": 2, "dribbles": 5, "chancesCreated": 6 } },
-  { "id": "p_ucl_02", "name": "Ferran Torres", "position": "LWF", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 3, "assists": 0, "dribbles": 2, "chancesCreated": 2 } },
-  { "id": "p_ucl_03", "name": "Ermedin Demirović", "position": "ST", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 1, "assistLeader": 0, "mvp": 0, "stats": { "goals": 3, "assists": 0, "dribbles": 1, "chancesCreated": 2 } },
-  { "id": "p_ucl_04", "name": "Lamine Yamal", "position": "RWF", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 2, "dribbles": 7, "chancesCreated": 5 } },
-  { "id": "p_ucl_05", "name": "Raphinha", "position": "LWF", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 4, "chancesCreated": 5 } },
-  { "id": "p_ucl_06", "name": "Michael Olise", "position": "RWF", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 3, "chancesCreated": 4 } },
-  { "id": "p_ucl_07", "name": "Erling Haaland", "position": "ST", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 2, "chancesCreated": 3 } },
-  { "id": "p_ucl_08", "name": "Serhou Guirassy", "position": "ST", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 1, "chancesCreated": 2 } },
-  { "id": "p_ucl_09", "name": "Marc Bartra", "position": "CB", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "tackles": 4, "chancesCreated": 1 } },
-  { "id": "p_ucl_10", "name": "Danijel Šturm", "position": "ST", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 2, "assists": 0, "dribbles": 1, "chancesCreated": 1 } },
-  { "id": "p_ucl_11", "name": "Deniz Undav", "position": "CAM", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 1, "mvp": 0, "stats": { "goals": 0, "assists": 2, "dribbles": 2, "chancesCreated": 4 } },
-  { "id": "p_ucl_12", "name": "Nicolás Paz", "position": "CAM", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 1, "mvp": 0, "stats": { "goals": 0, "assists": 2, "dribbles": 3, "chancesCreated": 5 } },
-  { "id": "p_ucl_13", "name": "Pau Torres", "position": "CB", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 1, "mvp": 0, "stats": { "goals": 0, "assists": 2, "tackles": 6, "chancesCreated": 2 } },
-  { "id": "p_ucl_14", "name": "Joshua Kimmich", "position": "CDM", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 0, "assists": 1, "dribbles": 3, "chancesCreated": 6 } },
-  { "id": "p_ucl_15", "name": "Kylian Mbappé", "position": "ST", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 0, "dribbles": 4, "chancesCreated": 3 } },
-  { "id": "p_ucl_16", "name": "Bruno Fernandes", "position": "CAM", "season": "2026/27", "competition": "Champions League", "stage": "none", "goldenBoot": 0, "assistLeader": 0, "mvp": 0, "stats": { "goals": 1, "assists": 0, "dribbles": 2, "chancesCreated": 4 } }
+  {
+    "id": "p_pl_03",
+    "name": "João Pedro",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 2,
+    "goldenBoot": 0,
+    "assistLeader": 1,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 3,
+      "dribbles": 4,
+      "chancesCreated": 3
+    }
+  },
+  {
+    "id": "p_pl_21",
+    "name": "Kevin Schade",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 3,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_pl_22",
+    "name": "Marcus Tavernier",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 4,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_pl_04",
+    "name": "Morgan Rogers",
+    "position": "CAM",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 5,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 1,
+      "dribbles": 6,
+      "chancesCreated": 10
+    }
+  },
+  {
+    "id": "p_pl_18",
+    "name": "Bukayo Saka",
+    "position": "RWF",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 6,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0,
+      "dribbles": 4,
+      "chancesCreated": 7
+    }
+  },
+  {
+    "id": "p_pl_13",
+    "name": "Alexander Isak",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 7,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0,
+      "dribbles": 2,
+      "chancesCreated": 3
+    }
+  },
+  {
+    "id": "p_pl_08",
+    "name": "Erling Haaland",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 1,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 4,
+      "assists": 0,
+      "dribbles": 3,
+      "chancesCreated": 4
+    }
+  },
+  {
+    "id": "p_pl_01",
+    "name": "Bruno Fernandes",
+    "position": "CAM",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 8,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 1,
+      "dribbles": 2,
+      "chancesCreated": 11
+    }
+  },
+  {
+    "id": "p_pl_23",
+    "name": "Leif Davis",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 9,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 1
+    }
+  },
+  {
+    "id": "p_pl_11",
+    "name": "Vitaly Janelt",
+    "position": "CDM",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 10,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 1,
+      "chancesCreated": 5
+    }
+  },
+  {
+    "id": "p_pl_07",
+    "name": "Cole Palmer",
+    "position": "RWF",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 11,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 2,
+      "dribbles": 4,
+      "chancesCreated": 8
+    }
+  },
+  {
+    "id": "p_pl_19",
+    "name": "Kai Havertz",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 12,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 2,
+      "chancesCreated": 4
+    }
+  },
+  {
+    "id": "p_pl_24",
+    "name": "Josh King",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 13,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_pl_25",
+    "name": "Tyrick Mitchell",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 14,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_pl_26",
+    "name": "Mohamed Belloumi",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 15,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 1
+    }
+  },
+  {
+    "id": "p_pl_12",
+    "name": "Martin Ødegaard",
+    "position": "CAM",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 16,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 3,
+      "chancesCreated": 12
+    }
+  },
+  {
+    "id": "p_pl_27",
+    "name": "Emersonn",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 17,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_pl_20",
+    "name": "Bryan Mbeumo",
+    "position": "RWF",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 18,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 3,
+      "chancesCreated": 3
+    }
+  },
+  {
+    "id": "p_pl_28",
+    "name": "Anthony Elanga",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 19,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_pl_02",
+    "name": "Rayan Cherki",
+    "position": "CAM",
+    "season": "2026/27",
+    "competition": "Premier League",
+    "leaguePosition": 20,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 1,
+    "stats": {
+      "goals": 2,
+      "assists": 2,
+      "dribbles": 5,
+      "chancesCreated": 10
+    }
+  },
+  {
+    "id": "p_laliga_03",
+    "name": "Kylian Mbappé",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 1,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 6,
+      "assists": 1,
+      "dribbles": 9,
+      "chancesCreated": 5
+    }
+  },
+  {
+    "id": "p_laliga_05",
+    "name": "Sergio Camello",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 2,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 6,
+      "assists": 0,
+      "dribbles": 3,
+      "chancesCreated": 4
+    }
+  },
+  {
+    "id": "p_laliga_01",
+    "name": "Raphinha",
+    "position": "LWF",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 3,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 6,
+      "assists": 3,
+      "dribbles": 8,
+      "chancesCreated": 12
+    }
+  },
+  {
+    "id": "p_laliga_06",
+    "name": "Roberto Fernández",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 4,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 5,
+      "assists": 0,
+      "dribbles": 3,
+      "chancesCreated": 4
+    }
+  },
+  {
+    "id": "p_laliga_07",
+    "name": "Yassir Zabiri",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 5,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 5,
+      "assists": 0,
+      "dribbles": 4,
+      "chancesCreated": 2
+    }
+  },
+  {
+    "id": "p_laliga_13",
+    "name": "Ante Budimir",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 6,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 4,
+      "assists": 0,
+      "dribbles": 1,
+      "chancesCreated": 2
+    }
+  },
+  {
+    "id": "p_laliga_08",
+    "name": "Pierre-Emerick Aubameyang",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 7,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 4,
+      "assists": 2,
+      "dribbles": 2,
+      "chancesCreated": 3
+    }
+  },
+  {
+    "id": "p_laliga_02",
+    "name": "Lamine Yamal",
+    "position": "RWF",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 8,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 6,
+      "assists": 0,
+      "dribbles": 14,
+      "chancesCreated": 11
+    }
+  },
+  {
+    "id": "p_laliga_12",
+    "name": "Lucas Boyé",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 9,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 4,
+      "assists": 0,
+      "dribbles": 3,
+      "chancesCreated": 2
+    }
+  },
+  {
+    "id": "p_laliga_04",
+    "name": "Fermín López",
+    "position": "CAM",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 10,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 4,
+      "assists": 2,
+      "dribbles": 5,
+      "chancesCreated": 8
+    }
+  },
+  {
+    "id": "p_laliga_09",
+    "name": "Jude Bellingham",
+    "position": "CAM",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 11,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 2,
+      "dribbles": 6,
+      "chancesCreated": 9
+    }
+  },
+  {
+    "id": "p_laliga_21",
+    "name": "Mariano Díaz",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 12,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 3
+    }
+  },
+  {
+    "id": "p_laliga_11",
+    "name": "Álex Baena",
+    "position": "LWF",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 13,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0,
+      "dribbles": 4,
+      "chancesCreated": 10
+    }
+  },
+  {
+    "id": "p_laliga_22",
+    "name": "Fernando Niño",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 14,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_laliga_23",
+    "name": "Luka Sucic",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 15,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_laliga_15",
+    "name": "Nicolas Pépé",
+    "position": "RWF",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 16,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 5,
+      "chancesCreated": 4
+    }
+  },
+  {
+    "id": "p_laliga_16",
+    "name": "Robert Navarro",
+    "position": "LWF",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 17,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 4,
+      "chancesCreated": 5
+    }
+  },
+  {
+    "id": "p_laliga_17",
+    "name": "Rodrigo Riquelme",
+    "position": "LWF",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 18,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 3,
+      "chancesCreated": 6
+    }
+  },
+  {
+    "id": "p_laliga_24",
+    "name": "Roger Brugué",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 19,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_laliga_25",
+    "name": "Juan Iglesias",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "La Liga",
+    "leaguePosition": 20,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_bl_11",
+    "name": "Phillip Tietz",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 1,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0,
+      "dribbles": 2,
+      "chancesCreated": 3
+    }
+  },
+  {
+    "id": "p_bl_21",
+    "name": "Igor Matanovic",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 2,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_bl_01",
+    "name": "Yuito Suzuki",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 3,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0,
+      "dribbles": 2,
+      "chancesCreated": 3
+    }
+  },
+  {
+    "id": "p_bl_22",
+    "name": "Michael Gregoritsch",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 4,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_bl_02",
+    "name": "Younes Ebnoutalib",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 5,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0,
+      "dribbles": 1,
+      "chancesCreated": 2
+    }
+  },
+  {
+    "id": "p_bl_06",
+    "name": "Patrik Schick",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 6,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0,
+      "dribbles": 2,
+      "chancesCreated": 4
+    }
+  },
+  {
+    "id": "p_bl_23",
+    "name": "Maximilian Eggestein",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 7,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_bl_08",
+    "name": "Serhou Guirassy",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 8,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 2,
+      "dribbles": 3,
+      "chancesCreated": 3
+    }
+  },
+  {
+    "id": "p_bl_24",
+    "name": "Yannick Engelhardt",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 9,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_bl_07",
+    "name": "Josha Vagnoman",
+    "position": "RB",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 10,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "tackles": 11,
+      "chancesCreated": 4
+    }
+  },
+  {
+    "id": "p_bl_25",
+    "name": "Can Uzun",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 11,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_bl_26",
+    "name": "Jonathan Burkardt",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 12,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_bl_10",
+    "name": "Hugo Bolin",
+    "position": "CAM",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 13,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 5,
+      "chancesCreated": 2
+    }
+  },
+  {
+    "id": "p_bl_27",
+    "name": "Niclas Füllkrug",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 14,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_bl_28",
+    "name": "Adam Hlozek",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 15,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_bl_29",
+    "name": "Felix Nmecha",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 16,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_bl_30",
+    "name": "Christian Kofane",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 17,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_bl_31",
+    "name": "Tim Skarke",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 18,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_bl_32",
+    "name": "David Mokwa",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 19,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_bl_09",
+    "name": "Ridle Baku",
+    "position": "RB",
+    "season": "2026/27",
+    "competition": "Bundesliga",
+    "leaguePosition": 20,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "tackles": 9,
+      "chancesCreated": 3
+    }
+  },
+  {
+    "id": "p_sa_01",
+    "name": "Donyell Malen",
+    "position": "RWF",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 1,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 5,
+      "assists": 0,
+      "dribbles": 6,
+      "chancesCreated": 2
+    }
+  },
+  {
+    "id": "p_sa_03",
+    "name": "Antonio Raimondo",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 2,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 4,
+      "assists": 0,
+      "dribbles": 2,
+      "chancesCreated": 0
+    }
+  },
+  {
+    "id": "p_sa_04",
+    "name": "Davide Frattesi",
+    "position": "CM",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 3,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0,
+      "dribbles": 2,
+      "chancesCreated": 2
+    }
+  },
+  {
+    "id": "p_sa_21",
+    "name": "Franco Mastantuono",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 4,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_sa_22",
+    "name": "Giorgi Kvernadze",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 5,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 1
+    }
+  },
+  {
+    "id": "p_sa_23",
+    "name": "Daniel Maldini",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 6,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_sa_24",
+    "name": "Mateo Pellegrino",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 7,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_sa_15",
+    "name": "Alphadjo Cissè",
+    "position": "CAM",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 8,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 3,
+      "chancesCreated": 3
+    }
+  },
+  {
+    "id": "p_sa_08",
+    "name": "Hassane Kamara",
+    "position": "LB",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 9,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "tackles": 8,
+      "chancesCreated": 3
+    }
+  },
+  {
+    "id": "p_sa_11",
+    "name": "Anastasios Douvikas",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 10,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 2,
+      "chancesCreated": 2
+    }
+  },
+  {
+    "id": "p_sa_09",
+    "name": "Lautaro Martínez",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 11,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 3,
+      "chancesCreated": 2
+    }
+  },
+  {
+    "id": "p_sa_12",
+    "name": "Rasmus Højlund",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 12,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 2,
+      "chancesCreated": 1
+    }
+  },
+  {
+    "id": "p_sa_07",
+    "name": "Assane Diao",
+    "position": "LWF",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 13,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 4,
+      "chancesCreated": 4
+    }
+  },
+  {
+    "id": "p_sa_13",
+    "name": "Ché Adams",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 14,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 2,
+      "chancesCreated": 0
+    }
+  },
+  {
+    "id": "p_sa_06",
+    "name": "Martin Baturina",
+    "position": "CAM",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 15,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 5,
+      "chancesCreated": 6
+    }
+  },
+  {
+    "id": "p_sa_25",
+    "name": "Hakan Çalhanoglu",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 16,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_sa_26",
+    "name": "Matìas Soulè",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 17,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_sa_14",
+    "name": "Gustavo Varela",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 18,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 1,
+      "chancesCreated": 0
+    }
+  },
+  {
+    "id": "p_sa_27",
+    "name": "Diego Moreira",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 19,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_sa_28",
+    "name": "Alessandro Romano",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Serie A",
+    "leaguePosition": 20,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_l1_01",
+    "name": "Amine Gouiri",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 1,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 4,
+      "assists": 0,
+      "dribbles": 6,
+      "chancesCreated": 2
+    }
+  },
+  {
+    "id": "p_l1_03",
+    "name": "Lassine Sinayoko",
+    "position": "RWF",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 2,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 4,
+      "assists": 0,
+      "dribbles": 4,
+      "chancesCreated": 3
+    }
+  },
+  {
+    "id": "p_l1_02",
+    "name": "Kamory Doumbia",
+    "position": "CAM",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 3,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 4,
+      "assists": 0,
+      "dribbles": 7,
+      "chancesCreated": 5
+    }
+  },
+  {
+    "id": "p_l1_04",
+    "name": "Esteban Lepaul",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 4,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0,
+      "dribbles": 4,
+      "chancesCreated": 5
+    }
+  },
+  {
+    "id": "p_l1_08",
+    "name": "Paris Brunner",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 5,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0,
+      "dribbles": 3,
+      "chancesCreated": 2
+    }
+  },
+  {
+    "id": "p_l1_05",
+    "name": "Florian Thauvin",
+    "position": "RWF",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 6,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0,
+      "dribbles": 8,
+      "chancesCreated": 6
+    }
+  },
+  {
+    "id": "p_l1_21",
+    "name": "Louis Mafouta",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 7,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_l1_11",
+    "name": "Gessime Yassine",
+    "position": "RWF",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 8,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 1,
+      "dribbles": 5,
+      "chancesCreated": 4
+    }
+  },
+  {
+    "id": "p_l1_22",
+    "name": "Samuel Amo-Ameyaw",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 9,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_l1_12",
+    "name": "Marquinhos",
+    "position": "CB",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 10,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "tackles": 12,
+      "chancesCreated": 1
+    }
+  },
+  {
+    "id": "p_l1_06",
+    "name": "Ferran Torres",
+    "position": "LWF",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 11,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 3,
+      "chancesCreated": 3
+    }
+  },
+  {
+    "id": "p_l1_23",
+    "name": "Cameron Archer",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 12,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_l1_24",
+    "name": "Zachary Athekame",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 13,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 1
+    }
+  },
+  {
+    "id": "p_l1_25",
+    "name": "Branco van den Boomen",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 14,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 1
+    }
+  },
+  {
+    "id": "p_l1_26",
+    "name": "Pierre-Emile Højbjerg",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 15,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_l1_27",
+    "name": "Eric Dier",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 16,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 1
+    }
+  },
+  {
+    "id": "p_l1_28",
+    "name": "Lamine Sy",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 17,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_l1_29",
+    "name": "Felix Bacher",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 18,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_l1_30",
+    "name": "Christ Tapé",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 19,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_l1_31",
+    "name": "Názinho",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Ligue 1",
+    "leaguePosition": 20,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 1
+    }
+  },
+  {
+    "id": "p_ucl_02",
+    "name": "Ferran Torres",
+    "position": "LWF",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "stage": "none",
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0,
+      "dribbles": 2,
+      "chancesCreated": 2
+    },
+    "leaguePosition": 1
+  },
+  {
+    "id": "p_ucl_17",
+    "name": "Ermedin Demirovic",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "leaguePosition": 2,
+    "goldenBoot": 1,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 3,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_ucl_18",
+    "name": "Danijel Sturm",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "leaguePosition": 3,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_ucl_06",
+    "name": "Michael Olise",
+    "position": "RWF",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "stage": "none",
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 1,
+      "dribbles": 3,
+      "chancesCreated": 4
+    },
+    "leaguePosition": 4
+  },
+  {
+    "id": "p_ucl_07",
+    "name": "Erling Haaland",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "stage": "none",
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 2,
+      "chancesCreated": 3
+    },
+    "leaguePosition": 5
+  },
+  {
+    "id": "p_ucl_08",
+    "name": "Serhou Guirassy",
+    "position": "ST",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "stage": "none",
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 1,
+      "chancesCreated": 2
+    },
+    "leaguePosition": 6
+  },
+  {
+    "id": "p_ucl_09",
+    "name": "Marc Bartra",
+    "position": "CB",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "stage": "none",
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "tackles": 4,
+      "chancesCreated": 1
+    },
+    "leaguePosition": 7
+  },
+  {
+    "id": "p_ucl_05",
+    "name": "Raphinha",
+    "position": "LWF",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "stage": "none",
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 0,
+      "dribbles": 4,
+      "chancesCreated": 5
+    },
+    "leaguePosition": 8
+  },
+  {
+    "id": "p_ucl_01",
+    "name": "Ousmane Dembélé",
+    "position": "RWF",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "stage": "none",
+    "goldenBoot": 0,
+    "assistLeader": 1,
+    "mvp": 0,
+    "stats": {
+      "goals": 2,
+      "assists": 2,
+      "dribbles": 5,
+      "chancesCreated": 6
+    },
+    "leaguePosition": 9
+  },
+  {
+    "id": "p_ucl_04",
+    "name": "Lamine Yamal",
+    "position": "RWF",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "stage": "none",
+    "goldenBoot": 0,
+    "assistLeader": 1,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 2,
+      "dribbles": 7,
+      "chancesCreated": 5
+    },
+    "leaguePosition": 10
+  },
+  {
+    "id": "p_ucl_19",
+    "name": "Alexsandro",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "leaguePosition": 11,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_ucl_20",
+    "name": "Nicolo Tresoldi",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "leaguePosition": 12,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_ucl_21",
+    "name": "Archie Brown",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "leaguePosition": 13,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_ucl_22",
+    "name": "Santiago Mouriño",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "leaguePosition": 14,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_ucl_23",
+    "name": "Suleiman Camara",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "leaguePosition": 15,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_ucl_24",
+    "name": "Geny Catamo",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "leaguePosition": 16,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_ucl_25",
+    "name": "Troy Parrott",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "leaguePosition": 17,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_ucl_26",
+    "name": "Sergiño Dest",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "leaguePosition": 18,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_ucl_27",
+    "name": "Matheus Cunha",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "leaguePosition": 19,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  },
+  {
+    "id": "p_ucl_28",
+    "name": "Dominik Szoboszlai",
+    "position": "UNK",
+    "season": "2026/27",
+    "competition": "Champions League",
+    "leaguePosition": 20,
+    "goldenBoot": 0,
+    "assistLeader": 0,
+    "mvp": 0,
+    "stats": {
+      "goals": 1,
+      "assists": 0
+    }
+  }
 ]
